@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Browse reports | ReFound{% endblock %}
+{% block content %}<section class="page-content">
+<h1>Browse reports</h1>
+<form method="get" class="filters">
+<label for="q">Keywords</label><input id="q" name="q" maxlength="200" value="{{ request.GET.q }}">
+<label for="kind">Lost or found</label><select id="kind" name="kind"><option value="">All types</option>{% for value,label in kinds %}<option value="{{ value }}" {% if request.GET.kind == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+<label for="category">Category</label><select id="category" name="category"><option value="">All categories</option>{% for value,label in categories %}<option value="{{ value }}" {% if request.GET.category == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+<label for="location">General area</label><input id="location" name="location" maxlength="120" value="{{ request.GET.location }}">
+<label for="status">Status</label><select id="status" name="status"><option value="">All statuses</option>{% for value,label in statuses %}<option value="{{ value }}" {% if request.GET.status == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+<label for="sort">Sort</label><select id="sort" name="sort"><option value="newest">Newest</option><option value="oldest" {% if request.GET.sort == 'oldest' %}selected{% endif %}>Oldest</option></select>
+<button>Search</button><a href="{% url 'core:browse' %}">Clear filters</a>
+</form>
+<p>{{ page_obj.paginator.count }} report{{ page_obj.paginator.count|pluralize }}</p>
+{% for report in page_obj %}<article><h2><a href="{% url 'core:detail' report.pk %}">{{ report.title }}</a></h2><p>{{ report.get_kind_display }} · {{ report.get_category_display }} · {{ report.get_status_display }}</p><p>{{ report.location }} · {{ report.event_date }}</p></article>{% empty %}<p>No matching reports. Try broader filters.</p>{% endfor %}
+<nav aria-label="Report pages">{% if page_obj.has_previous %}<a href="?{{ querystring }}&amp;page={{ page_obj.previous_page_number }}">Previous</a>{% endif %} Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} {% if page_obj.has_next %}<a href="?{{ querystring }}&amp;page={{ page_obj.next_page_number }}">Next</a>{% endif %}</nav>
+</section>{% endblock %}

@@ -46,3 +46,13 @@ body {
 .site-footer {
     margin-top: 4rem;
 }
+
+form p, .filters { display: grid; gap: .4rem; }
+input, select, textarea, button { font: inherit; padding: .5rem; max-width: 100%; box-sizing: border-box; }
+button { cursor: pointer; }
+article { border-bottom: 1px solid #c8cdd2; padding: 1rem 0; }
+.errorlist { color: #a30000; }
+.helptext { font-size: .9rem; }
+.report-image { max-width: 100%; max-height: 30rem; object-fit: contain; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #275ab0; outline-offset: 2px; }
+@media (max-width: 700px) { .site-header, .site-header nav { flex-wrap: wrap; } }

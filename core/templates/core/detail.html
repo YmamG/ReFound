@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ report.title }} | ReFound{% endblock %}
+{% block content %}<section class="page-content"><h1>{{ report.title }}</h1>
+<p>{{ report.get_kind_display }} · {{ report.get_status_display }}</p>
+<div>{{ report.description|linebreaks }}</div><dl><dt>Category</dt><dd>{{ report.get_category_display }}</dd><dt>Color</dt><dd>{{ report.color|default:"Not specified" }}</dd><dt>General area</dt><dd>{{ report.location }}</dd><dt>Date lost or found</dt><dd>{{ report.event_date }}</dd></dl>
+{% if report.image %}<img class="report-image" src="{% url 'core:image' report.pk %}" alt="Photo of {{ report.title }}">{% endif %}
+<p>{% if report.status != 'resolved' %}<a href="{% url 'core:claim' report.pk %}">Contact owner privately / claim item</a> · {% endif %}<a href="{% url 'core:matches' report.pk %}">Potential matches</a></p>
+<p>Verify ownership before handing over an item. Arrange exchanges in a safe public place.</p>
+<p><a href="{% url 'core:manage' report.pk %}">Manage your report</a> · <a href="{% url 'core:abuse' report.pk %}">Report abuse</a></p></section>{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}<section class="page-content"><h1>Report submitted</h1>
+<p>Save this management key now. It is shown once and cannot be recovered. Anyone with it can manage or delete your report.</p><p><code>{{ token }}</code></p>
+<p>Use the key on your <a href="{% url 'core:manage' id %}">management page</a> to check private messages and update the status. Bookmark that page; no automatic notifications are sent.</p>
+<p><a href="{% url 'core:detail' id %}">View report</a> · <a href="{% url 'core:matches' id %}">Find potential matches</a></p></section>{% endblock %}

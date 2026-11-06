@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}<section class="page-content"><h1>Manage {{ report.title }}</h1>
+{% if authorized %}
+<form method="post">{% csrf_token %}<input type="hidden" name="action" value="status">{{ status_form.as_p }}<button>Update status</button></form>
+<h2>Private messages</h2>{% for claim in report.claims.all %}<article><p>{{ claim.message|linebreaks }}</p><p>Reply to: {{ claim.reply_email }}</p><time>{{ claim.created_at }}</time></article>{% empty %}<p>No messages yet. Check back here for replies.</p>{% endfor %}
+<form method="post">{% csrf_token %}<button name="action" value="lock">Lock management page</button></form>
+<h2>Delete report</h2><p>This permanently deletes your report, image and private messages.</p><form method="post">{% csrf_token %}<button name="action" value="delete">Permanently delete this report</button></form>
+{% else %}<p>Enter the key saved when you submitted this report. It is never included in the page URL.</p><form method="post">{% csrf_token %}<input type="hidden" name="action" value="unlock">{{ form.as_p }}<button>Unlock</button></form>{% endif %}
+</section>{% endblock %}

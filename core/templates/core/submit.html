@@ -1,0 +1,4 @@
+{% extends "base.html" %}
+{% block content %}<section class="page-content"><h1>Report a {{ kind }} item</h1>
+<p>Everything except contact information is public. Use a general area, not an exact address. Keep distinctive ownership evidence private.</p>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}{{ form.as_p }}<button>Submit report</button></form></section>{% endblock %}

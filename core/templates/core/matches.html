@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}<section class="page-content"><h1>Potential matches for {{ report.title }}</h1>
+<p>Suggestions use category, keywords, color, general area and dates. Scores indicate similarity, not proof of ownership. Report status changes only when the owner updates it.</p>
+{% for match in matches %}<article><h2><a href="{% url 'core:detail' match.report.pk %}">{{ match.report.title }}</a></h2><p>Similarity: {{ match.score }}/100</p><ul>{% for reason in match.reasons %}<li>{{ reason }}</li>{% endfor %}</ul></article>{% empty %}<p>No potential matches yet. Check back as more reports arrive.</p>{% endfor %}
+</section>{% endblock %}
