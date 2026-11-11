@@ -1,1 +1,1 @@
-{% load i18n %}{% load static %}<svg class="icon" aria-hidden="true" focusable="false"><use href="{% static 'images/icons.svg' %}#{{ name }}"></use></svg>
+{% load i18n %}{% load static %}<svg class="icon{% if name == 'arrow-right' or name == 'arrow-left' %} icon-directional{% endif %}" aria-hidden="true" focusable="false"><use href="{% static 'images/icons.svg' %}#{{ name }}"></use></svg>

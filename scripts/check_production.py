@@ -33,7 +33,7 @@ language = client.post('/i18n/setlang/', {'language': 'en', 'next': '/'}, secure
 assert language.cookies[settings.LANGUAGE_COOKIE_NAME]['secure']
 assert language.cookies[settings.LANGUAGE_COOKIE_NAME]['httponly']
 from django.contrib.staticfiles.storage import staticfiles_storage
-for name in ['css/style.css','js/main.js','images/icons.svg','images/campus-illustration.svg','images/favicon.svg','fonts/inter-latin-400.woff2','fonts/inter-latin-500.woff2','fonts/noto-arabic-400.woff2','fonts/noto-arabic-500.woff2']:
+for name in ['css/tokens.css','css/style.css','js/main.js','images/icons.svg','images/belongings-illustration.webp','images/favicon.svg','fonts/inter-latin-400.woff2','fonts/inter-latin-500.woff2','fonts/noto-arabic-400.woff2','fonts/noto-arabic-500.woff2']:
     url=staticfiles_storage.url(name)
     r=client.get(url,secure=True)
     assert r.status_code==200,(url,r.status_code)

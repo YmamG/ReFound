@@ -15,6 +15,9 @@ msgstr ". تعتمد المقارنة على نوع الغرض والكلمات 
 msgid "/ 100 shared-detail points"
 msgstr "/ 100 نقطة تشابه في التفاصيل"
 
+msgid "A backpack, headphones, notebook and keys, ready to find their way home"
+msgstr "حقيبة وسماعات ودفتر ومفاتيح، تنتظر الرجوع لأصحابها"
+
 msgid "A bag, a charger, a favorite little thing. Find what you lost, share what you found, and help someone’s day turn around."
 msgstr "حقيبة، شاحن، أو غرض تحبه. ابحث عما فقدت، وبلّغ عما وجدت، وساعد غرضًا يرجع لصاحبه."
 
@@ -83,6 +86,9 @@ msgstr "إضافة بلاغ | ReFound"
 
 msgid "All categories"
 msgstr "جميع الفئات"
+
+msgid "All in one place."
+msgstr "في مكان واحد."
 
 msgid "All statuses"
 msgstr "جميع الحالات"
@@ -447,6 +453,9 @@ msgstr "خلّنا نراجع الفلاتر"
 msgid "Let’s find"
 msgstr "نلقى لك"
 
+msgid "Let’s find it."
+msgstr "خلّنا نلقاه."
+
 msgid "Let’s refresh that page"
 msgstr "خلّنا نحدّث الصفحة"
 
@@ -458,6 +467,9 @@ msgstr "ربط بلاغ قديم | ReFound"
 
 msgid "Link to this browser"
 msgstr "ربطه بهذا المتصفح"
+
+msgid "Little things. Real connections."
+msgstr "أغراض بسيطة. وروابط تقرّبنا."
 
 msgid "Lock this page"
 msgstr "قفل الصفحة القديمة"
@@ -479,6 +491,9 @@ msgstr "مفقود"
 
 msgid "Lost & found"
 msgstr "المفقودات والمعثورات"
+
+msgid "Lost it?"
+msgstr "ضاع منك شيء؟"
 
 msgid "Lost item"
 msgstr "غرض مفقود"
@@ -614,6 +629,9 @@ msgstr "لا يمكن إدارة البلاغ إلا من متصفحه الأص�
 
 msgid "Only you and authorized moderators can read these. Check back here; automatic notifications are not sent."
 msgstr "لا يقرأها إلا أنت والمشرفون المصرّح لهم. تابعها هنا؛ لا تُرسل إشعارات تلقائية."
+
+msgid "Open My reports to check messages and updates. Keep your cookies to keep access."
+msgstr "افتح «بلاغاتي» لمتابعة الرسائل والتحديثات. احتفظ ببيانات المتصفح لاستمرار الوصول."
 
 msgid "Open my inbox"
 msgstr "فتح رسائلي"
@@ -1041,6 +1059,9 @@ msgstr "الوصول للبلاغ القديم متاح لمدة ساعة. اح�
 msgid "Your browser, your reports"
 msgstr "متصفحك وبلاغاتك"
 
+msgid "Your college’s lost and found, all in one place. Find your belongings or help something find its owner."
+msgstr "مفقودات كلية الحاسب، في مكان واحد. ابحث عن غرضك، أو ساعد غرضًا يرجع لصاحبه."
+
 msgid "Your concern has been saved for moderator review. Thank you for helping keep ReFound safe."
 msgstr "حُفظت ملاحظتك ليراجعها المشرفون. شكرًا لمساعدتك في إبقاء ReFound آمنًا."
 
@@ -1094,6 +1115,9 @@ msgstr "تم تحديث حالة بلاغك."
 
 msgid "Your reports"
 msgstr "بلاغاتك"
+
+msgid "Your reports and messages."
+msgstr "بلاغاتك ورسائلك."
 
 msgid "Your reports."
 msgstr "بلاغاتك."

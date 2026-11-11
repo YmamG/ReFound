@@ -6,7 +6,7 @@ A lost-and-found board for the College of Computing, with Arabic/English interfa
 
 ## Design preview
 
-[Arabic desktop preview](docs/screenshots/home-ar-desktop.png) · [Arabic mobile preview](docs/screenshots/home-ar-mobile.png)
+[Arabic desktop](docs/screenshots/home-ar-desktop.png) · [Arabic mobile](docs/screenshots/home-ar-mobile.png) · [English desktop](docs/screenshots/home-en-desktop.png) · [English mobile](docs/screenshots/home-en-mobile.png) · [Interaction preview](docs/screenshots/interactions.gif)
 
 These screenshots use disposable fictional browser-test data, not real reports or personal contact information.
 
@@ -85,7 +85,7 @@ New reports do not generate management keys. Existing pre-device reports keep le
 
 Language follows the saved preference, then the browser preference, with Arabic as the fallback. The **العربية / English** button switches complete page direction, navigation, labels, choices, help text, validation, matching explanations and system feedback. User descriptions are displayed unchanged with automatic text direction. Full browser controls such as the OS file picker use the browser/OS locale.
 
-The redesign adapts the supplied video and [design reference](docs/DESIGN_REFERENCE.md): cream `#f5f1e4`, ink `#2c2e2a`, green `#8ed462`, white floating pill navigation, large sans-serif titles, soft cards, original flat SVG art and a yellow closing section. Lost/found photos remain available because they are part of this product's purpose. Inter and Noto Sans Arabic are hosted locally under their included Open Font Licenses in `static/fonts/`; no font CDN is contacted by visitors. Animations respect reduced motion, and forms/navigation work without JavaScript.
+The redesign adapts the supplied video and [design reference](docs/DESIGN_REFERENCE.md): cream `#f5f1e4`, ink `#2c2e2a`, green `#8ed462`, white floating pill navigation, large sans-serif titles, soft cards, a clean, original belongings illustration and a yellow closing section. Lost/found photos remain available because they are part of this product's purpose. Inter and Noto Sans Arabic are hosted locally under their included Open Font Licenses in `static/fonts/`; no font CDN is contacted by visitors. Design values are centralized in `static/css/tokens.css`, using the supplied color/type/spacing/radius tokens as ordinary CSS. The browser downloads a locally hosted, approximately 190 KB WebP hero illustration. Button hover/press/focus, submission feedback and menu transitions share consistent timings; motion respects reduced-motion preferences, and forms/navigation work without JavaScript.
 
 Arabic translations live in `locale/ar/messages.json`. After editing:
 
@@ -116,7 +116,7 @@ python manage.py test core --verbosity 2
 python scripts/check_production.py
 ```
 
-Django tests use an isolated database and temporary media. The production smoke uses disposable storage, checks secure cookies/HTTPS/HSTS, collected versioned assets, protected media, missing routes and absence of ML imports. See [the current validation report](docs/CAMPUS_UPDATE.md).
+Django tests use an isolated database and temporary media. The production smoke uses disposable storage, checks secure cookies/HTTPS/HSTS, collected versioned assets, protected media, missing routes and absence of ML imports. See [the current design validation report](docs/DESIGN_REFINEMENT.md).
 
 For optional Playwright/Chromium checks, start the **disposable fixture**, then run the browser script in another terminal:
 

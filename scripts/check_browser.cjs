@@ -20,7 +20,11 @@ let browser;
   page.on('console', msg => { if (msg.type()==='error' && !(intentional404 && msg.text().includes('404 (Not Found)'))) errors.push(msg.text()); });
   page.on('request', request => { if (!request.url().startsWith(base) && !request.url().startsWith('blob:')) external.push(request.url()); });
   const shot = async (p,name) => {
-    await p.evaluate(() => { window.scrollTo(0,0); return document.fonts.ready; });
+    await p.evaluate(async () => {
+      document.querySelectorAll('img[loading=lazy]').forEach(image => { image.loading = 'eager'; });
+      await Promise.all(Array.from(document.images, image => image.decode().catch(() => {})));
+      window.scrollTo(0,0); await document.fonts.ready;
+    });
     await p.screenshot({path:path.join(artifacts,name+'.png'),fullPage:true,animations:'disabled'});
   };
   await page.goto(base+'/', {waitUntil:'networkidle'});
@@ -38,6 +42,21 @@ let browser;
   assert.equal(await page.locator('.nav-shell').evaluate(el=>getComputedStyle(el).boxShadow),'none');
   await shot(page,'refound-campus-home-ar-desktop');
   checks.push('Arabic RTL home, exactly two main actions, cream/pill design, private device credential');
+  const tokens = await page.evaluate(() => {
+    const style = getComputedStyle(document.documentElement);
+    return ['--color-fresh-grass','--color-cream-paper','--color-ink-black','--text-heading','--text-display','--radius-full'].map(key => style.getPropertyValue(key).trim());
+  });
+  assert.deepEqual(tokens,['#8ed462','#f5f1e4','#2c2e2a','53px','140px','50px']);
+  const primary = page.locator('.hero-actions>a').first();
+  assert(await primary.evaluate(el => el.getBoundingClientRect().height >= 56));
+  await primary.hover();
+  await page.waitForFunction(() => new DOMMatrixReadOnly(getComputedStyle(document.querySelector('.hero-actions>a')).transform).m42 < -1);
+  await page.keyboard.press('Tab'); await primary.focus();
+  assert(await primary.evaluate(el => el.matches(':focus-visible')));
+  assert.equal(await primary.evaluate(el => getComputedStyle(el).outlineWidth),'3px');
+  await page.mouse.move(0,0);
+  checks.push('Supplied tokens, readable button targets, hover feedback and keyboard focus');
+
   await page.getByRole('button',{name:'مبنى الطالبات',exact:true}).click();
   await page.locator('[name=building][value=women][aria-pressed=true]').waitFor();
   await page.locator('.hero-actions').getByRole('link',{name:'إضافة بلاغ'}).click();
@@ -54,10 +73,38 @@ let browser;
   await page.locator('#id_image').setInputFiles({name:'test.png',mimeType:'image/png',buffer:png});
   await page.waitForFunction(()=>document.querySelector('[data-photo-preview]').naturalWidth>0);
   await shot(page,'refound-campus-submit-ar-desktop');
+  await page.route('**/reports/new/lost/', async route => {
+    if (route.request().method()==='POST') await new Promise(resolve => setTimeout(resolve,700));
+    await route.continue();
+  });
+  let busyObserved;
+  page.on('console', message => {
+    if (message.text().startsWith('REFOUND_BUSY_TEST:')) busyObserved = JSON.parse(message.text().slice('REFOUND_BUSY_TEST:'.length));
+  });
+  await page.evaluate(() => {
+    const button = document.querySelector('form[data-busy] button[type=submit]');
+    const observer = new MutationObserver(() => {
+      if (button.getAttribute('aria-busy') === 'true') {
+        console.log('REFOUND_BUSY_TEST:'+JSON.stringify({disabled:button.disabled,spinner:!!button.querySelector('.button-spinner'),announced:document.querySelector('[role=status]').textContent}));
+        observer.disconnect();
+      }
+    });
+    observer.observe(button,{attributes:true,childList:true,subtree:true});
+  });
   await page.getByRole('button',{name:'نشر البلاغ',exact:true}).click();
+  assert.deepEqual(busyObserved,{disabled:true,spinner:true,announced:'جارٍ الإرسال…'});
+  await page.unroute('**/reports/new/lost/');
   await page.getByRole('heading',{name:'الرسائل الخاصة',exact:false}).waitFor();
   const manageURL = new URL(page.url()).pathname;
   const reportURL = manageURL.replace('manage/','');
+  await page.goBack();
+  const restoredSubmit = page.getByRole('button',{name:'نشر البلاغ',exact:true});
+  await restoredSubmit.waitFor();
+  assert(!(await restoredSubmit.isDisabled()));
+  assert.equal(await restoredSubmit.locator('.icon').count(),1);
+  await page.goto(base+manageURL);
+  checks.push('Submitting spinner, double-click guard and restored button markup after browser Back');
+
   assert.equal(await page.locator('#management-key').count(),0);
   assert.equal(await page.locator('[name=token]').count(),0);
   assert.deepEqual(await page.evaluate(()=>Object.keys(localStorage)),[]);
@@ -155,6 +202,28 @@ let browser;
     await page.getByRole('button',{name:language==='ar'?'فتح القائمة':'Open navigation',exact:true}).click();
     assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'),'true');
     await page.keyboard.press('Escape');assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'),'false');
+    assert(await page.locator('.language-button').isVisible());
+    assert(await page.locator('#main-nav').evaluate(el=>el.inert));
+    await page.locator('.menu-toggle').focus();
+    await page.keyboard.press('Enter');
+    await page.keyboard.press('Tab');
+    assert(await page.locator('#main-nav a').first().evaluate(el=>el===document.activeElement));
+    await page.locator('main h1').click();
+    assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'),'false');
+    checks.push(language+' always-visible language switch, menu tab order, outside dismissal and closed-menu focus isolation');
+    for (const width of [320,360,600,800,1024,1280]) {
+      await page.setViewportSize({width,height:900});
+      await page.goto(base+'/',{waitUntil:'networkidle'});
+      const fit = await page.evaluate(() => {
+        const image = document.querySelector('.hero-art img').getBoundingClientRect();
+        const headline = document.querySelector('.headline-mark').getBoundingClientRect();
+        return {overflow:document.documentElement.scrollWidth>innerWidth,image:image.left>=0 && image.right<=innerWidth,headline:headline.left>=0 && headline.right<=innerWidth,buttons:[...document.querySelectorAll('.hero-actions>a')].every(el=>{const r=el.getBoundingClientRect();return r.left>=0 && r.right<=innerWidth && r.height>=52;})};
+      });
+      assert.deepEqual(fit,{overflow:false,image:true,headline:true,buttons:true},language+' '+width+'px primary elements clip');
+      checks.push(language+' '+width+'px whole illustration, headline and large actions fit');
+    }
+    await page.setViewportSize({width:390,height:844});
+
     await page.goto(base+'/reports/');await shot(page,'refound-campus-board-'+language+'-mobile');
   }
   checks.push('Arabic/English mobile menu and Escape keyboard behavior');
@@ -178,6 +247,7 @@ let browser;
   const reducedContext = await browser.newContext({reducedMotion:'reduce',locale:'ar'});
   const reduced = await reducedContext.newPage();await reduced.goto(base+'/');
   assert.equal(await reduced.locator('.hero-art').evaluate(el=>getComputedStyle(el).animationName),'none');
+  assert.equal(await reduced.evaluate(()=>document.getAnimations().filter(animation=>animation.playState==='running').length),0);
   checks.push('Core navigation/forms without JavaScript and reduced-motion preference');
   assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
   console.log(JSON.stringify({result:'PASS',checks:checks.length,coverage:checks,unexpectedBrowserErrors:errors,externalRequests:external},null,2));
