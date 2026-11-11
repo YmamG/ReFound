@@ -1,8 +1,8 @@
 from django.contrib.staticfiles import finders
-from django.test import SimpleTestCase
+from django.test import TestCase
 
 
-class PublicPageTests(SimpleTestCase):
+class PublicPageTests(TestCase):
     def test_home_page_uses_shared_navigation(self):
         response = self.client.get('/')
 
@@ -69,6 +69,11 @@ class MVPTests(TestCase):
         self.addCleanup(self.media.cleanup)
         self.addCleanup(self.settings_override.disable)
 
+    def post_report(self, kind, data):
+        url = reverse("core:submit", args=[kind])
+        nonce = self.client.get(url).context["submission_id"]
+        return self.client.post(url, {**data, "submission_id": nonce})
+
     def url(self, name, report):
         return reverse('core:' + name, args=[report.pk])
 
@@ -77,7 +82,7 @@ class MVPTests(TestCase):
 
     def test_both_submission_workflows_hash_keys_and_keep_contacts_private(self):
         for kind in ('lost', 'found'):
-            response = self.client.post(reverse('core:submit', args=[kind]), report_data())
+            response = self.post_report(kind, report_data())
             self.assertEqual(response.status_code, 200)
             report = Report.objects.get(kind=kind)
             token = response.context['token']
@@ -104,7 +109,7 @@ class MVPTests(TestCase):
 
     def test_invalid_forms_do_not_save(self):
         for changes in ({'event_date': (timezone.localdate() + timedelta(days=1)).isoformat()}, {'title': 'x'}, {'category': 'invalid'}, {'contact_info': 'bad email'}, {'contact_method': 'phone', 'contact_info': 'abc'}, {'website': 'spam.example'}):
-            response = self.client.post(reverse('core:submit', args=['lost']), report_data(**changes))
+            response = self.post_report('lost', report_data(**changes))
             self.assertTrue(response.context['form'].errors)
         self.assertEqual(Report.objects.count(), 0)
 
@@ -116,7 +121,7 @@ class MVPTests(TestCase):
         output = BytesIO()
         image.save(output, format='PNG')
         upload = SimpleUploadedFile('unsafe-name.png', output.getvalue() + b'<script>bad</script>', content_type='image/png')
-        response = self.client.post(reverse('core:submit', args=['found']), report_data(image=upload))
+        response = self.post_report('found', report_data(image=upload))
         self.assertEqual(response.status_code, 200)
         report = Report.objects.get()
         self.assertTrue(report.image.name.endswith('.jpg'))
@@ -182,7 +187,7 @@ class MVPTests(TestCase):
 
     def test_claim_inbox_private_and_owner_can_read(self):
         report = make_report()
-        response = self.client.post(self.url('claim', report), {'message': 'The inside pocket has a red label.', 'reply_email': 'claimant@example.com'})
+        response = self.client.post(self.url('claim', report), {'message': 'The inside pocket has a red label.', 'reply_email': 'claimant@example.com'}, follow=True)
         self.assertContains(response, 'Message saved privately')
         self.assertEqual(Claim.objects.count(), 1)
         self.assertNotContains(self.client.get(self.url('manage', report)), 'claimant@example.com')
@@ -210,7 +215,8 @@ class MVPTests(TestCase):
         self.unlock(report)
         self.client.get(self.url('manage', report), {'action': 'delete'})
         self.assertTrue(Report.objects.filter(pk=report.pk).exists())
-        self.client.post(self.url('manage', report), {'action': 'delete'})
+        self.assertEqual(self.client.post(self.url('manage', report), {'action': 'delete'}).status_code, 400)
+        self.client.post(self.url('manage', report), {'action': 'delete', 'confirm_delete': 'yes'})
         self.assertFalse(Report.objects.filter(pk=report.pk).exists())
         self.assertEqual(Claim.objects.count(), 0)
 
@@ -223,10 +229,10 @@ class MVPTests(TestCase):
     def test_rate_limit_shared_across_sessions_and_expires(self):
         url = reverse('core:submit', args=['lost'])
         for _ in range(10):
-            self.assertEqual(Client().post(url, {}).status_code, 200)
+            self.assertEqual(Client().post(url, {}).status_code, 400)
         self.assertEqual(Client().post(url, {}).status_code, 429)
         SubmissionWindow.objects.update(started_at=timezone.now() - timedelta(minutes=11))
-        self.assertEqual(Client().post(url, {}).status_code, 200)
+        self.assertEqual(Client().post(url, {}).status_code, 400)
 
     def test_public_user_input_escaped_and_unknown_routes(self):
         report = make_report(title='<script>alert(1)</script>')

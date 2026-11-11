@@ -45,6 +45,7 @@ class Report(models.Model):
     contact_method = models.CharField(max_length=5, choices=Contact.choices)
     contact_info = models.CharField(max_length=254)
     status = models.CharField(max_length=10, choices=Status.choices, default=Status.ACTIVE)
+    is_hidden = models.BooleanField(default=False, db_index=True)
     management_hash = models.CharField(max_length=128, editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -80,6 +81,7 @@ class Claim(models.Model):
 class AbuseReport(models.Model):
     report = models.ForeignKey(Report, on_delete=models.CASCADE, related_name="abuse_reports")
     reason = models.TextField(max_length=1000)
+    reviewed = models.BooleanField(default=False, db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
 

@@ -4,6 +4,10 @@ import warnings
 
 from PIL import Image, ImageOps
 from django import forms
+from django.utils import timezone
+from urllib.parse import urlsplit
+import re
+import uuid
 from django.core.files.base import ContentFile
 from django.core.validators import validate_email, RegexValidator
 
@@ -20,6 +24,12 @@ class SpamProtectedForm(forms.Form):
 
 
 class ReportForm(SpamProtectedForm, forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['event_date'].widget.attrs['max'] = timezone.localdate().isoformat()
+        self.fields['image'].widget.attrs.update({'accept': 'image/jpeg,image/png', 'data-photo-input': ''})
+        self.fields['contact_info'].widget.attrs['autocomplete'] = 'off'
+
     class Meta:
         model = Report
         fields = ["title", "description", "category", "color", "location", "event_date", "image", "contact_method", "contact_info"]
@@ -47,8 +57,16 @@ class ReportForm(SpamProtectedForm, forms.ModelForm):
                 with Image.open(upload) as source:
                     if source.format not in {"JPEG", "PNG"} or source.width * source.height > 12_000_000:
                         raise ValueError("Unsupported image")
+                    if getattr(source, 'n_frames', 1) != 1:
+                        raise ValueError('Use a still image')
                     source.load()
-                    clean = ImageOps.exif_transpose(source).convert("RGB")
+                    oriented = ImageOps.exif_transpose(source)
+                    if oriented.mode in {'RGBA', 'LA'} or 'transparency' in oriented.info:
+                        rgba = oriented.convert('RGBA')
+                        clean = Image.new('RGB', rgba.size, 'white')
+                        clean.paste(rgba, mask=rgba.getchannel('A'))
+                    else:
+                        clean = oriented.convert('RGB')
                     clean.thumbnail((1600, 1600))
                     out = BytesIO()
                     clean.save(out, format="JPEG", quality=85)
@@ -86,3 +104,33 @@ class StatusForm(forms.ModelForm):
     class Meta:
         model = Report
         fields = ["status"]
+
+
+class BrowseForm(forms.Form):
+    q = forms.CharField(required=False, max_length=200, label='Search belongings', widget=forms.TextInput(attrs={'placeholder': 'What are you looking for?', 'type': 'search'}))
+    kind = forms.ChoiceField(required=False, label='Report type', choices=[('', 'Lost & found'), *Report.Kind.choices])
+    category = forms.ChoiceField(required=False, choices=[('', 'All categories'), *Report.Category.choices])
+    location = forms.CharField(required=False, max_length=120, label='General area', widget=forms.TextInput(attrs={'placeholder': 'e.g. Campus library'}))
+    status = forms.ChoiceField(required=False, choices=[('', 'All statuses'), *Report.Status.choices])
+    sort = forms.ChoiceField(required=False, label='Sort by', choices=[('newest', 'Newest first'), ('oldest', 'Oldest first')])
+
+
+class OwnerLookupForm(ManagementForm):
+    report_link = forms.CharField(max_length=500, label='Report link or ID', widget=forms.TextInput(attrs={'placeholder': 'Paste your report link or ID', 'autocomplete': 'off'}))
+
+    def clean_report_link(self):
+        value = self.cleaned_data['report_link'].strip()
+        try:
+            return uuid.UUID(value)
+        except ValueError:
+            try:
+                path = urlsplit(value).path
+            except ValueError:
+                raise forms.ValidationError('Paste a valid ReFound report link or report ID.')
+            match = re.fullmatch(r'/reports/([0-9a-fA-F-]{36})/(?:manage/)?', path)
+            if not match:
+                raise forms.ValidationError('Paste a valid ReFound report link or report ID.')
+            try:
+                return uuid.UUID(match.group(1))
+            except ValueError:
+                raise forms.ValidationError('Enter a valid report ID.')

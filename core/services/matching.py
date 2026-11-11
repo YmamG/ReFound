@@ -39,9 +39,9 @@ def score_pair(report, candidate):
 
 
 def potential_matches(report, limit=20):
-    if report.status == Report.Status.RESOLVED:
+    if report.status == Report.Status.RESOLVED or report.is_hidden:
         return []
-    candidates = Report.objects.exclude(kind=report.kind).exclude(status=Report.Status.RESOLVED)
+    candidates = Report.objects.filter(is_hidden=False).exclude(kind=report.kind).exclude(status=Report.Status.RESOLVED)
     matches = []
     for candidate in candidates.iterator():
         score, reasons = score_pair(report, candidate)

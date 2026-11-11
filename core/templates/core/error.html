@@ -1,0 +1,2 @@
+{% extends 'base.html' %}{% block title %}{{ heading }} | ReFound{% endblock %}
+{% block content %}<div class="container page-section"><section class="empty-state error-page"><span class="error-code">{{ status }}</span><h1>{{ heading }}</h1><p>{{ explanation }}</p><div class="empty-actions"><a class="button" href="{% url 'core:browse' %}">Back to the board {% include 'core/includes/icon.html' with name='arrow-right' %}</a><a class="button button-light" href="{% url 'core:contact' %}">Get help</a></div></section></div>{% endblock %}

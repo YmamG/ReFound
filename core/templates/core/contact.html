@@ -1,10 +1,3 @@
-{% extends "base.html" %}
-
-{% block title %}Contact | ReFound{% endblock %}
-
-{% block content %}
-<section class="page-content">
-    <h1>Contact</h1>
-    <p>Contact information will be added here as the project develops.</p>
-</section>
-{% endblock %}
+{% extends 'base.html' %}{% block title %}Help & contact | ReFound{% endblock %}
+{% block content %}<div class="container page-section"><header class="page-heading narrow centered"><span class="eyebrow">A little guidance</span><h1>Let’s find the right next step.</h1><p>Most questions start with an item, a saved key, or a connection waiting to happen.</p></header><div class="help-grid"><article class="aside-card"><span class="aside-icon">{% include 'core/includes/icon.html' with name='search' %}</span><h2>Looking for an item?</h2><p>Start with the board. Open a report and send its owner a private message. We don’t publish personal contact details.</p><a class="text-link" href="{% url 'core:browse' %}">Browse reports {% include 'core/includes/icon.html' with name='arrow-right' %}</a></article><article class="aside-card"><span class="aside-icon">{% include 'core/includes/icon.html' with name='key' %}</span><h2>Managing your report?</h2><p>Use your report link and saved management key to open your inbox, update the status or remove the report. Check your saved key file if you downloaded one.</p><a class="text-link" href="{% url 'core:owner_lookup' %}">Open my report {% include 'core/includes/icon.html' with name='arrow-right' %}</a></article><article class="aside-card"><span class="aside-icon">{% include 'core/includes/icon.html' with name='flag' %}</span><h2>Something doesn’t look right?</h2><p>Choose “Report abuse” on the item page. Your concern goes privately to moderators for manual review.</p><a class="text-link" href="{% url 'core:about' %}#privacy">Privacy &amp; safety {% include 'core/includes/icon.html' with name='arrow-right' %}</a></article></div>
+<div class="support-callout"><h2>Still need help?</h2>{% if support_email %}<p>For site support, contact <a href="mailto:{{ support_email|urlencode }}">{{ support_email }}</a>. Do not include management keys or sensitive documents.</p>{% else %}<p>For questions about this testing session or a lost management key, contact the person or organization who shared ReFound with you. A public support email has not been listed yet.</p>{% endif %}<p class="field-help">ReFound does not verify ownership or automatically notify report owners. For emergencies or unsafe situations, contact the appropriate local service.</p></div></div>{% endblock %}
