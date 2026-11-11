@@ -1,26 +1,27 @@
-{% load static %}<!doctype html>
-<html lang="en">
+{% load static i18n %}{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#123f3a"><meta name="description" content="A friendly place to report lost belongings, share what you found, and make a connection. No account needed.">
-<title>{% block title %}ReFound — Good things find their way back{% endblock %}</title>
+<meta name="theme-color" content="#f5f1e4"><meta name="description" content="{% translate 'College of Computing lost and found. Find your belongings, report an item and connect privately.' %}">
+<title>{% block title %}{% translate 'ReFound — A little closer to home' %}{% endblock %}</title>
 <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
 <link rel="stylesheet" href="{% static 'css/style.css' %}"><script src="{% static 'js/main.js' %}" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{% translate 'Skip to content' %}</a>
 <header class="site-header"><div class="nav-shell">
-<a class="brand" href="{% url 'core:home' %}" aria-label="ReFound home"><span class="brand-mark" aria-hidden="true">{% include 'core/includes/icon.html' with name='reconnect' %}</span>ReFound<span class="brand-dot">.</span></a>
-<button class="menu-toggle icon-button" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open navigation" hidden>{% include 'core/includes/icon.html' with name='menu' %}</button>
-<nav id="main-nav" class="site-nav" aria-label="Main navigation">
-<a {% if request.resolver_match.url_name == 'browse' %}aria-current="page"{% endif %} href="{% url 'core:browse' %}">Browse reports</a>
-<a {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %} href="{% url 'core:about' %}">How it works</a>
-<a {% if request.resolver_match.url_name == 'owner_lookup' or request.resolver_match.url_name == 'manage' %}aria-current="page"{% endif %} href="{% url 'core:owner_lookup' %}">My report</a>
-<a class="button button-small" href="{% url 'core:submit' 'found' %}">{% include 'core/includes/icon.html' with name='plus' %} Report an item</a>
+<a class="brand" href="{% url 'core:home' %}" aria-label="{% translate 'ReFound home' %}"><span class="brand-mark">{% include 'core/includes/icon.html' with name='reconnect' %}</span><span dir="ltr">ReFound<span class="brand-dot">.</span></span></a>
+<button class="menu-toggle icon-button" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="{% translate 'Open navigation' %}" hidden>{% include 'core/includes/icon.html' with name='menu' %}</button>
+<nav id="main-nav" class="site-nav" aria-label="{% translate 'Main navigation' %}">
+<a {% if request.resolver_match.url_name == 'browse' %}aria-current="page"{% endif %} href="{% url 'core:browse' %}">{% translate 'Browse reports' %}</a>
+<a {% if request.resolver_match.url_name == 'archive' %}aria-current="page"{% endif %} href="{% url 'core:archive' %}">{% translate 'Archive' %}</a>
+<a {% if request.resolver_match.url_name == 'my_reports' %}aria-current="page"{% endif %} href="{% url 'core:my_reports' %}">{% translate 'My reports' %}</a>
+<form action="{% url 'set_language' %}" method="post" class="language-form">{% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}">{% if LANGUAGE_CODE == 'ar' %}<button name="language" value="en" type="submit" class="language-button" lang="en">{% translate 'English' %}</button>{% else %}<button name="language" value="ar" type="submit" class="language-button" lang="ar">العربية</button>{% endif %}</form>
+<a class="button button-small" href="{% url 'core:add_report' %}">{% translate 'Add a report' %} <span class="button-dot">{% include 'core/includes/icon.html' with name='plus' %}</span></a>
 </nav></div></header>
 <main id="main" tabindex="-1">
-{% if messages %}<div class="container notices" aria-live="polite">{% for message in messages %}<div class="notice notice-{{ message.tags }}"><span>{% include 'core/includes/icon.html' with name='check-circle' %}</span><p>{{ message }}</p><button class="icon-button" type="button" data-dismiss aria-label="Dismiss notification">{% include 'core/includes/icon.html' with name='close' %}</button></div>{% endfor %}</div>{% endif %}
+{% if messages %}<div class="container notices" aria-live="polite">{% for message in messages %}<div class="notice notice-{{ message.tags }}">{% include 'core/includes/icon.html' with name='check-circle' %}<p>{% translate message.message %}</p><button class="icon-button" type="button" data-dismiss aria-label="{% translate 'Dismiss notification' %}">{% include 'core/includes/icon.html' with name='close' %}</button></div>{% endfor %}</div>{% endif %}
 {% block content %}{% endblock %}
 </main>
-<footer class="site-footer"><div class="container footer-main"><div><a class="brand" href="{% url 'core:home' %}">ReFound<span class="brand-dot">.</span></a><p>Less searching. More happy returns.</p></div><nav aria-label="Footer navigation"><a href="{% url 'core:about' %}#privacy">Privacy &amp; safety</a><a href="{% url 'core:contact' %}">Help &amp; contact</a><a href="{% url 'core:owner_lookup' %}">Manage your report</a></nav></div><div class="container footer-bottom"><span>© {% now 'Y' %} ReFound</span><span>Made for the little things that matter.</span></div></footer>
+<footer class="site-footer"><div class="container footer-main"><div class="footer-story"><span class="eyebrow">{% translate 'A small campus. A little kindness.' %}</span><h2>{% translate 'Good things' %}<br>{% translate 'find their way back.' %}</h2><a class="button" href="{% url 'core:add_report' %}">{% translate 'Start a connection' %} <span class="button-dot">{% include 'core/includes/icon.html' with name='arrow-right' %}</span></a></div><div class="footer-links"><a class="brand" href="{% url 'core:home' %}" dir="ltr">ReFound.</a><p>{% translate 'Made for the College of Computing.' %}</p><nav aria-label="{% translate 'Footer navigation' %}"><a href="{% url 'core:about' %}">{% translate 'How it works' %}</a><a href="{% url 'core:about' %}#privacy">{% translate 'Privacy &amp; safety' %}</a><a href="{% url 'core:contact' %}">{% translate 'Help &amp; contact' %}</a><a href="{% url 'core:my_reports' %}">{% translate 'My reports' %}</a></nav></div></div><div class="container footer-bottom"><span>© {% now 'Y' %} ReFound</span><span>{% translate 'Small acts. Happy returns.' %}</span></div></footer>
 </body></html>

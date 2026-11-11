@@ -1,4 +1,6 @@
 import secrets
+from datetime import timedelta
+from django.conf import settings
 
 from django.contrib import messages
 from django.contrib.auth.hashers import make_password, check_password
@@ -28,7 +30,11 @@ def throttled(request):
 
 @require_safe
 def home(request):
-    recent = Report.objects.filter(is_hidden=False, status=Report.Status.ACTIVE).order_by('-created_at', '-id')[:4]
+    recent = Report.objects.filter(is_hidden=False, status=Report.Status.ACTIVE, created_at__gt=timezone.now() - timedelta(days=settings.REFOUND_ARCHIVE_DAYS))
+    building = request.session.get('building')
+    if building in Report.Building.values:
+        recent = recent.filter(building=building)
+    recent = recent.order_by('-created_at', '-id')[:4]
     return render(request, 'core/home.html', {'recent_reports': recent})
 
 
@@ -43,28 +49,34 @@ def contact(request):
 
 
 @require_safe
-def browse(request):
-    form = BrowseForm(request.GET)
+def browse(request, archived=False):
+    params = request.GET.copy()
+    if 'building' not in params and request.session.get('building'):
+        params['building'] = request.session['building']
+    form = BrowseForm(params)
     reports = Report.objects.filter(is_hidden=False)
+    cutoff = timezone.now() - timedelta(days=settings.REFOUND_ARCHIVE_DAYS)
+    reports = reports.filter(created_at__lte=cutoff) if archived else reports.filter(created_at__gt=cutoff)
     if form.is_valid():
         data = form.cleaned_data
-        for field in ('kind', 'category', 'status'):
+        for field in ('kind', 'category', 'status', 'building'):
             if data.get(field):
                 reports = reports.filter(**{field: data[field]})
         if data.get('q'):
-            reports = reports.filter(Q(title__icontains=data['q']) | Q(description__icontains=data['q']))
+            reports = reports.filter(Q(title__icontains=data['q']) | Q(description__icontains=data['q']) | Q(color__icontains=data['q']))
         if data.get('location'):
-            reports = reports.filter(location__icontains=data['location'])
+            reports = reports.filter(Q(location__icontains=data['location']) | Q(classroom__icontains=data['location']))
+        if data.get('color'):
+            reports = reports.filter(color__iexact=data['color'])
         reports = reports.order_by('created_at', 'id') if data.get('sort') == 'oldest' else reports.order_by('-created_at', '-id')
     else:
         reports = reports.none()
     page = Paginator(reports, 12).get_page(request.GET.get('page'))
-    params = request.GET.copy()
     params.pop('page', None)
     for key in list(params):
         if key not in form.fields:
             params.pop(key)
-    return render(request, 'core/browse.html', {'form': form, 'page_obj': page, 'querystring': params.urlencode()})
+    return render(request, 'core/browse.html', {'form': form, 'page_obj': page, 'querystring': params.urlencode(), 'archived': archived})
 
 
 def new_intent(request):
@@ -87,7 +99,7 @@ def submit(request, kind):
         raise Http404
     if getattr(request, 'refound_upload_too_large', False):
         return error_response(request, 413, 'That photo is too large', 'Choose a still JPEG or PNG up to 5 MB, then try again.')
-    form = ReportForm(request.POST if request.method == 'POST' else None, request.FILES or None)
+    form = ReportForm(request.POST if request.method == 'POST' else None, request.FILES or None, initial={'building': request.session.get('building', '')})
     if request.method == 'GET':
         nonce = new_intent(request)
     else:
@@ -100,19 +112,18 @@ def submit(request, kind):
             return throttled(request)
         if not nonce or nonce not in intents:
             form.add_error(None, 'This form has expired. Review your details, select your photo again if needed, and submit once more.')
-            return render(request, 'core/submit.html', {'form': form, 'kind': kind, 'submission_id': new_intent(request)}, status=400)
+            return render(request, 'core/submit.html', {'form': form, 'kind': kind, 'kind_label': Report.Kind(kind).label, 'submission_id': new_intent(request)}, status=400)
         if form.is_valid():
-            token = secrets.token_urlsafe(32)
             report = form.save(commit=False)
             report.kind = kind
-            report.management_hash = make_password(token)
+            report.owner = request.device
+            report.management_hash = make_password(None)
             report.save()
             intents[nonce] = str(report.pk)
             request.session['report_forms'] = intents
-            grant_access(request, report)
-            # The raw management key exists only in this no-store response, never in sessions/URLs.
-            return render(request, 'core/confirmation.html', {'id': str(report.pk), 'token': token, 'report': report})
-    return render(request, 'core/submit.html', {'form': form, 'kind': kind, 'submission_id': nonce})
+            messages.success(request, 'Your report is published and saved in this browser’s My reports.')
+            return redirect('core:manage', pk=report.pk)
+    return render(request, 'core/submit.html', {'form': form, 'kind': kind, 'kind_label': Report.Kind(kind).label, 'submission_id': nonce})
 
 
 @never_cache
@@ -154,6 +165,8 @@ def image(request, pk):
 @sensitive_post_parameters('reply_email', 'message')
 def claim(request, pk):
     report = public_report(pk)
+    if report.is_archived:
+        return error_response(request, 410, "This report is archived", "Archived reports no longer accept new messages.")
     if report.status == Report.Status.RESOLVED:
         return error_response(request, 410, 'This story has a happy ending', 'This report is resolved and is no longer accepting messages.')
     if request.method == 'POST' and not allow_submission(request):
@@ -194,7 +207,7 @@ def owner_lookup(request):
             return throttled(request)
         if form.is_valid():
             report = Report.objects.filter(pk=form.cleaned_data['report_link']).first()
-            if report and check_password(form.cleaned_data['token'], report.management_hash):
+            if report and not report.owner_id and check_password(form.cleaned_data['token'], report.management_hash):
                 grant_access(request, report)
                 return redirect('core:manage', pk=report.pk)
             form.add_error(None, 'We could not unlock that report. Check the report link and management key.')
@@ -214,12 +227,12 @@ def manage(request, pk):
         if action == 'unlock':
             if not allow_submission(request):
                 return throttled(request)
-            if form.is_valid() and check_password(form.cleaned_data['token'], report.management_hash):
+            if not report.owner_id and form.is_valid() and check_password(form.cleaned_data['token'], report.management_hash):
                 grant_access(request, report)
                 return redirect('core:manage', pk=pk)
             form.add_error(None, 'Invalid management key.')
         elif not authorized:
-            return error_response(request, 403, 'Your key opens this door', 'Unlock your report with the management key you saved when submitting it.')
+            return error_response(request, 403, 'Use the original browser', 'Only the browser that created this report can manage it. The displayed device number does not grant access.')
         elif action == 'lock':
             request.session.pop('manage_' + str(pk), None)
             return redirect('core:manage', pk=pk)
@@ -260,3 +273,43 @@ def server_error(request):
 
 def csrf_failure(request, reason=''):
     return error_response(request, 403, 'Let’s refresh that page', 'Your secure form session could not be verified. Reload the form and try again. Nothing was submitted.')
+
+@never_cache
+@require_safe
+def my_reports(request):
+    reports = request.device.reports.order_by('-created_at', '-id')
+    return render(request, 'core/my_reports.html', {'page_obj': Paginator(reports, 12).get_page(request.GET.get('page'))})
+
+
+@require_http_methods(['POST'])
+def select_building(request):
+    building = request.POST.get('building')
+    if building not in Report.Building.values:
+        return error_response(request, 400, 'Choose a building', 'Choose the men’s or women’s building at the College of Computing.')
+    request.session['building'] = building
+    return redirect('core:home')
+
+
+@never_cache
+@require_http_methods(['GET', 'POST'])
+@sensitive_post_parameters('token')
+def import_legacy(request):
+    form = OwnerLookupForm(request.POST if request.method == 'POST' else None)
+    if request.method == 'POST':
+        if not allow_submission(request):
+            return throttled(request)
+        if form.is_valid():
+            report = Report.objects.filter(pk=form.cleaned_data['report_link'], owner__isnull=True).first()
+            if report and check_password(form.cleaned_data['token'], report.management_hash):
+                updated = Report.objects.filter(pk=report.pk, owner__isnull=True).update(owner=request.device, management_hash=make_password(None))
+                if updated:
+                    request.session.pop('manage_' + str(report.pk), None)
+                    messages.success(request, 'The old report is now linked to this browser. Its old key no longer works.')
+                    return redirect('core:manage', pk=report.pk)
+            form.add_error(None, 'We could not link that report. Check its ID and old management key.')
+    return render(request, 'core/import_legacy.html', {'form': form})
+
+
+@require_safe
+def add_report(request):
+    return render(request, 'core/add_report.html')

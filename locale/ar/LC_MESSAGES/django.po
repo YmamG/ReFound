@@ -1,0 +1,1141 @@
+# Generated from ../messages.json by scripts/compile_translations.py.
+
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\nLanguage: ar\nPlural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+msgid ". Never send private browser cookies or sensitive documents."
+msgstr ". لا ترسل ملفات الارتباط الخاصة أو المستندات الحساسة."
+
+msgid ". Open My reports to check messages and updates. Keep your cookies to keep access."
+msgstr ". افتح «بلاغاتي» لمتابعة الرسائل والتحديثات، واحتفظ ببيانات المتصفح لاستمرار الوصول."
+
+msgid ". Suggestions compare category, keywords, color, general area and dates. They do not prove ownership."
+msgstr ". تعتمد المقارنة على نوع الغرض والكلمات واللون والمكان والتاريخ، ولا تثبت ملكية الغرض."
+
+msgid "/ 100 shared-detail points"
+msgstr "/ 100 نقطة تشابه في التفاصيل"
+
+msgid "A bag, a charger, a favorite little thing. Find what you lost, share what you found, and help someone’s day turn around."
+msgstr "حقيبة، شاحن، أو غرض تحبه. ابحث عما فقدت، وبلّغ عما وجدت، وساعد غرضًا يرجع لصاحبه."
+
+msgid "A few shared details"
+msgstr "تفاصيل تقرّبنا"
+
+msgid "A few thoughtful details can help the right person recognize what you’re missing."
+msgstr "تفاصيل بسيطة تساعد الآخرين يتعرّفون على الغرض الذي فقدته."
+
+msgid "A little breathing room"
+msgstr "لنأخذ استراحة قصيرة"
+
+msgid "A little care"
+msgstr "قليل من الاهتمام"
+
+msgid "A little detail goes a long way."
+msgstr "تفاصيل بسيطة تصنع فرقًا."
+
+msgid "A little detail."
+msgstr "تفصيل بسيط."
+
+msgid "A little guidance"
+msgstr "نساعدك بالخطوة التالية"
+
+msgid "A little lost?"
+msgstr "ضاعت الصفحة؟"
+
+msgid "A little quiet, for now."
+msgstr "المكان هادئ، حتى الآن."
+
+msgid "A photo helps"
+msgstr "الصورة تساعد"
+
+msgid "A possible connection?"
+msgstr "يمكن يكون هو؟"
+
+msgid "A private conversation starts here"
+msgstr "هنا تبدأ رسالة خاصة"
+
+msgid "A private, HTTP-only cookie links reports to this browser. The displayed number is a reference and cannot unlock reports. No account, password or hardware fingerprint is created."
+msgstr "يربط ملف ارتباط خاص وآمن البلاغات بهذا المتصفح. الرقم الظاهر للتعريف فقط، ولا يتيح التحكم بالبلاغات. لا ننشئ حسابًا أو كلمة مرور أو بصمة للجهاز."
+
+msgid "A real difference."
+msgstr "فرق حقيقي."
+
+msgid "A report, a browser, a connection waiting to happen."
+msgstr "بلاغ، ومتصفح، وخطوة تقرّب الغرض لصاحبه."
+
+msgid "A small campus. A little kindness."
+msgstr "كلية تجمعنا. ومبادرة تقرّبنا."
+
+msgid "A small community board for the things that matter."
+msgstr "مساحة لأهل الكلية، وللأغراض التي تهمهم."
+
+msgid "A way back."
+msgstr "له رجعة."
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Add a report"
+msgstr "إضافة بلاغ"
+
+msgid "Add a report | ReFound"
+msgstr "إضافة بلاغ | ReFound"
+
+msgid "All categories"
+msgstr "جميع الفئات"
+
+msgid "All statuses"
+msgstr "جميع الحالات"
+
+msgid "Already reported it?"
+msgstr "سبق وأضفت بلاغًا؟"
+
+msgid "Apply filters"
+msgstr "تطبيق الفلاتر"
+
+msgid "Archive"
+msgstr "الأرشيف"
+
+msgid "Archived"
+msgstr "مؤرشف"
+
+msgid "Archived reports"
+msgstr "أرشيف البلاغات"
+
+msgid "Archived reports no longer accept new messages."
+msgstr "البلاغات المؤرشفة لا تستقبل رسائل جديدة."
+
+msgid "Are you looking for something, or looking out for someone?"
+msgstr "فقدت غرضًا، أو عثرت على غرض وتبحث عن صاحبه؟"
+
+msgid "Area inside the College of Computing, e.g. library or first-floor corridor."
+msgstr "مكان داخل كلية الحاسب، مثل المكتبة أو ممر الدور الأول."
+
+msgid "Back to report"
+msgstr "العودة للبلاغ"
+
+msgid "Back to reports"
+msgstr "العودة للبلاغات"
+
+msgid "Back to the board"
+msgstr "العودة للبلاغات"
+
+msgid "Back to your report"
+msgstr "العودة لبلاغك"
+
+msgid "Bags"
+msgstr "حقائب"
+
+msgid "Be someone’s good news."
+msgstr "كن الخبر الحلو لشخص."
+
+msgid "Both buildings"
+msgstr "المبنيان"
+
+msgid "Browse all reports"
+msgstr "تصفّح جميع البلاغات"
+
+msgid "Browse reports"
+msgstr "البلاغات"
+
+msgid "Browse reports | ReFound"
+msgstr "البلاغات | ReFound"
+
+msgid "Browse the archive"
+msgstr "تصفّح الأرشيف"
+
+msgid "Browser access, secure forms and language preferences use essential cookies. No advertising, tracking scripts or third-party analytics are included. Deleted data may remain in operator backups under their retention policy."
+msgstr "نستخدم ملفات ارتباط ضرورية للوصول الآمن والنماذج وتفضيلات اللغة. لا توجد إعلانات أو أدوات تتبّع أو تحليلات خارجية. قد تبقى بيانات محذوفة في النسخ الاحتياطية وفق سياسة المشغّل."
+
+msgid "Browser number"
+msgstr "رقم هذا المتصفح"
+
+msgid "Building"
+msgstr "المبنى"
+
+msgid "Can’t find your key?"
+msgstr "ما لقيت المفتاح القديم؟"
+
+msgid "Category"
+msgstr "فئة الغرض"
+
+msgid "Category, color, location and date help people recognize an item. A photo and classroom or lab number are optional. Do not share door codes, personal documents or identifying ownership evidence publicly."
+msgstr "الفئة واللون والمكان والتاريخ تساعد على التعرّف على الغرض. الصورة ورقم القاعة أو المعمل اختياريان. لا تنشر رموز الدخول أو الوثائق الشخصية أو دلائل الملكية المميزة."
+
+msgid "Check distinctive details privately before handing an item over. Meet in a safe public place."
+msgstr "تأكد من التفاصيل المميزة على الخاص قبل تسليم الغرض، وقابل صاحبه في مكان عام وآمن."
+
+msgid "Check the confirmation box before permanently deleting your report."
+msgstr "حدد مربع التأكيد قبل حذف بلاغك نهائيًا."
+
+msgid "Check the link or form and try again."
+msgstr "راجع الرابط أو بيانات النموذج وحاول مرة ثانية."
+
+msgid "Check the report page for your next step."
+msgstr "راجع صفحة البلاغ لمعرفة الخطوة التالية."
+
+msgid "Choose a JPEG or PNG up to 5 MB, then try again."
+msgstr "اختر صورة JPEG أو PNG بحجم لا يتجاوز 5 ميجابايت، ثم حاول مجددًا."
+
+msgid "Choose a JPEG or PNG up to 5 MB. Nothing was submitted."
+msgstr "اختر صورة JPEG أو PNG بحجم لا يتجاوز 5 ميجابايت. لم تُحفظ أي بيانات."
+
+msgid "Choose a JPEG or PNG up to 5 MB. Your report has not been submitted."
+msgstr "اختر صورة JPEG أو PNG بحجم لا يتجاوز 5 ميجابايت. لم يُنشر البلاغ."
+
+msgid "Choose a building"
+msgstr "اختر المبنى"
+
+msgid "Choose a still JPEG or PNG up to 5 MB, then try again."
+msgstr "اختر صورة ثابتة JPEG أو PNG لا تتجاوز 5 ميجابايت، ثم حاول مجددًا."
+
+msgid "Choose the men’s or women’s building at the College of Computing."
+msgstr "اختر مبنى الطلاب أو مبنى الطالبات في كلية الحاسب."
+
+msgid "Choose the men’s or women’s building. Search the board, or add a lost or found report. ReFound currently covers the College of Computing only."
+msgstr "اختر مبنى الطلاب أو مبنى الطالبات، ثم ابحث في البلاغات أو أضف بلاغًا عن غرض فقدته أو وجدته. الخدمة تشمل كلية الحاسب فقط حاليًا."
+
+msgid "Choose your building and browse the latest reports. Filter by item, color or place."
+msgstr "اختر مبناك وتصفّح أحدث البلاغات. ابحث بحسب الغرض أو اللون أو المكان."
+
+msgid "Classroom / lab number"
+msgstr "رقم القاعة / المعمل"
+
+msgid "Clear all filters"
+msgstr "مسح الفلاتر"
+
+msgid "Clearing cookies, switching browsers or using private browsing loses access. On a shared device, anyone using the same browser can manage its reports. There is no automatic recovery."
+msgstr "مسح ملفات الارتباط أو تغيير المتصفح أو استخدام التصفح الخاص يفقدك الوصول. عند مشاركة المتصفح مع غيرك يمكنهم إدارة بلاغاته. لا توجد استعادة تلقائية للوصول."
+
+msgid "Close the loop"
+msgstr "كمّل الحكاية"
+
+msgid "Clothing"
+msgstr "ملابس"
+
+msgid "College of Computing"
+msgstr "كلية الحاسب"
+
+msgid "College of Computing lost and found. Find your belongings, report an item and connect privately."
+msgstr "مفقودات كلية الحاسب. ابحث عن غرضك، وأضف بلاغًا، وتواصل بخصوصية."
+
+msgid "College of Computing only. A classroom or lab number is optional; never share access codes. Reports enter the archive after"
+msgstr "الخدمة لكلية الحاسب فقط. رقم القاعة أو المعمل اختياري، ولا تنشر رموز الدخول. تؤرشف البلاغات بعد"
+
+msgid "College of Computing · Lost &amp; found"
+msgstr "كلية الحاسب · المفقودات والمعثورات"
+
+msgid "Color"
+msgstr "اللون"
+
+msgid "Concern submitted"
+msgstr "تم إرسال الملاحظة"
+
+msgid "Connect privately, confirm the details and arrange a safe handover. Then mark it resolved."
+msgstr "تواصل على الخاص، وتأكد من التفاصيل ورتّب تسليمًا آمنًا، ثم أغلق البلاغ."
+
+msgid "Contact info"
+msgstr "بيانات التواصل"
+
+msgid "Contact method"
+msgstr "طريقة التواصل"
+
+msgid "Contact the person or organization who shared ReFound with you. A public support email has not been listed yet."
+msgstr "تواصل مع الشخص أو الجهة التي شاركتك ReFound. لم يُضف بريد دعم عام حتى الآن."
+
+msgid "Copy key"
+msgstr "نسخ المفتاح القديم"
+
+msgid "Correct the highlighted fields, or start fresh with all reports."
+msgstr "صحّح الحقول الموضحة أو ابدأ من جديد بعرض جميع البلاغات."
+
+msgid "Date found"
+msgstr "تاريخ العثور"
+
+msgid "Date lost"
+msgstr "تاريخ الفقدان"
+
+msgid "Dates within seven days"
+msgstr "التاريخان خلال سبعة أيام"
+
+msgid "Delete my report"
+msgstr "حذف بلاغي"
+
+msgid "Describe evidence of ownership privately. Do not send passwords or sensitive documents."
+msgstr "اذكر دليل الملكية بشكل خاص. لا ترسل كلمات مرور أو وثائق حساسة."
+
+msgid "Describe the color, shape and general appearance."
+msgstr "اذكر اللون والشكل والمظهر العام."
+
+msgid "Describe what makes the item yours, or share a helpful lead. Only the report owner and authorized moderators can read your message."
+msgstr "صف ما يثبت ملكيتك للغرض أو شارك معلومة تساعد. لا يقرأ الرسالة إلا صاحب البلاغ والمشرفون المصرّح لهم."
+
+msgid "Description"
+msgstr "وصف الغرض"
+
+msgid "Dismiss notification"
+msgstr "إغلاق التنبيه"
+
+msgid "Do not include contact details, exact locations, or unique ownership evidence in public text."
+msgstr "لا تنشر بيانات التواصل أو رموز الدخول أو دلائل الملكية المميزة في الوصف العام."
+
+msgid "Documents"
+msgstr "مستندات"
+
+msgid "Download key file"
+msgstr "تنزيل ملف المفتاح القديم"
+
+msgid "Electronics"
+msgstr "إلكترونيات"
+
+msgid "Email"
+msgstr "بريد إلكتروني"
+
+msgid "English"
+msgstr "English"
+
+msgid "Enter a valid phone number."
+msgstr "أدخل رقم هاتف صحيحًا."
+
+msgid "Enter a valid report ID."
+msgstr "أدخل رقم بلاغ صحيحًا."
+
+msgid "Enter the management key saved when you submitted this report."
+msgstr "أدخل مفتاح الإدارة المحفوظ عند إضافة هذا البلاغ القديم."
+
+msgid "Essential cookies only"
+msgstr "ملفات ارتباط ضرورية فقط"
+
+msgid "Event date"
+msgstr "التاريخ"
+
+msgid "Every little thing."
+msgstr "كل غرض صغير."
+
+msgid "Explore potential matches"
+msgstr "عرض البلاغات المتشابهة"
+
+msgid "Find this report in My reports. The browser number alone does not grant access. Keep browser cookies to retain access."
+msgstr "تجد هذا البلاغ في «بلاغاتي». رقم المتصفح وحده لا يمنح الوصول. احتفظ بملفات الارتباط لتبقى بلاغاتك متاحة."
+
+msgid "First, choose your building"
+msgstr "بالبداية، اختر مبناك"
+
+msgid "Flag inappropriate content from the report page. If you lost browser access, contact the site operator; your displayed number cannot restore it."
+msgstr "أبلغ عن المحتوى المخالف من صفحة البلاغ. إذا فقدت الوصول من المتصفح، تواصل مع مشغّل الموقع؛ الرقم الظاهر لا يستعيده."
+
+msgid "Footer navigation"
+msgstr "روابط أسفل الصفحة"
+
+msgid "For site support, contact"
+msgstr "لدعم الموقع، تواصل عبر"
+
+msgid "Found"
+msgstr "معثور عليه"
+
+msgid "Found item"
+msgstr "غرض عثرت عليه"
+
+msgid "Found something instead?"
+msgstr "عثرت على شيء بدلًا من ذلك؟"
+
+msgid "Fresh on the board."
+msgstr "توّها على اللوحة."
+
+msgid "General area"
+msgstr "المكان"
+
+msgid "General area only, e.g. campus library. No room numbers or addresses."
+msgstr "المكان داخل الكلية، مثل المكتبة أو الممر. رقم القاعة متاح في حقله الاختياري."
+
+msgid "Get help"
+msgstr "طلب المساعدة"
+
+msgid "Give the useful details"
+msgstr "اذكر التفاصيل المفيدة"
+
+msgid "Good people."
+msgstr "وناس فيها الخير."
+
+msgid "Good things"
+msgstr "الأغراض الغالية"
+
+msgid "Have a look around"
+msgstr "خذ نظرة"
+
+msgid "Have a report from the old version? Link it here."
+msgstr "عندك بلاغ من النسخة القديمة؟ اربطه هنا."
+
+msgid "Help & contact | ReFound"
+msgstr "المساعدة والتواصل | ReFound"
+
+msgid "Help &amp; contact"
+msgstr "المساعدة والتواصل"
+
+msgid "Help it find its owner. Describe the item and where you found it."
+msgstr "ساعد الغرض يرجع لصاحبه. صفه واذكر مكان العثور عليه."
+
+msgid "Help keep this space safe"
+msgstr "ساعدنا نخلي المكان آمنًا"
+
+msgid "Hidden by moderators"
+msgstr "أخفاه المشرفون"
+
+msgid "How it works"
+msgstr "كيف يعمل؟"
+
+msgid "How it works | ReFound"
+msgstr "كيف يعمل؟ | ReFound"
+
+msgid "I found something"
+msgstr "عثرت على غرض"
+
+msgid "I lost something"
+msgstr "فقدت غرضًا"
+
+msgid "I understand this cannot be undone."
+msgstr "أفهم أن الحذف نهائي ولا يمكن التراجع عنه."
+
+msgid "If you selected a photo, choose it again before resubmitting."
+msgstr "إذا اخترت صورة، أعد اختيارها قبل إرسال النموذج مرة ثانية."
+
+msgid "Image"
+msgstr "صورة الغرض"
+
+msgid "Image must be no larger than 5 MB."
+msgstr "يجب ألا يتجاوز حجم الصورة 5 ميجابايت."
+
+msgid "Invalid management key."
+msgstr "مفتاح الإدارة القديم غير صحيح."
+
+msgid "Item text, photos, building, classroom, dates and status are public. Contact information stays private to authorized administrators. Messages and reply emails are visible only to the report owner and authorized moderators."
+msgstr "وصف الغرض وصورته والمبنى والقاعة والتاريخ والحالة بيانات عامة. بيانات التواصل خاصة بالمسؤولين المصرّح لهم. لا تظهر الرسائل وبريد الرد إلا لصاحب البلاغ والمشرفين المصرّح لهم."
+
+msgid "JPEG or PNG, up to 5 MB and 12 million pixels. Avoid faces, IDs and identifying details."
+msgstr "صورة JPEG أو PNG حتى 5 ميجابايت و12 مليون بكسل. تجنّب الوجوه والهويات والتفاصيل الشخصية."
+
+msgid "Keep an eye on your inbox, and close the loop when your item makes it home."
+msgstr "تابع رسائلك، وحدّث الحالة يوم يرجع الغرض لصاحبه."
+
+msgid "Keep this key private. Anyone with it can manage your report."
+msgstr "احتفظ بالمفتاح القديم بشكل خاص، فهو يمنح الوصول للبلاغ القديم."
+
+msgid "Keep unique ownership details for a private conversation."
+msgstr "اترك دلائل الملكية المميزة للمحادثة الخاصة."
+
+msgid "Keep your browser data"
+msgstr "احتفظ ببيانات متصفحك"
+
+msgid "Keys"
+msgstr "مفاتيح"
+
+msgid "Leave this field empty"
+msgstr "اترك هذا الحقل فارغًا"
+
+msgid "Less searching."
+msgstr "بحث أقل."
+
+msgid "Let the community know where things stand."
+msgstr "خلّ أهل الكلية يعرفون آخر المستجدات."
+
+msgid "Let’s bring it home."
+msgstr "نرجّعه لصاحبه."
+
+msgid "Let’s check those filters"
+msgstr "خلّنا نراجع الفلاتر"
+
+msgid "Let’s find"
+msgstr "نلقى لك"
+
+msgid "Let’s refresh that page"
+msgstr "خلّنا نحدّث الصفحة"
+
+msgid "Link an older report"
+msgstr "ربط بلاغ قديم"
+
+msgid "Link an older report | ReFound"
+msgstr "ربط بلاغ قديم | ReFound"
+
+msgid "Link to this browser"
+msgstr "ربطه بهذا المتصفح"
+
+msgid "Lock this page"
+msgstr "قفل الصفحة القديمة"
+
+msgid "Look for the key file you saved when posting. You can also find your item on the board and choose “Manage your report”. Keys cannot be recovered automatically."
+msgstr "ابحث عن ملف المفتاح الذي حفظته سابقًا، أو افتح بلاغك القديم واختر إدارته. لا يمكن استعادة المفاتيح القديمة تلقائيًا."
+
+msgid "Looking for a lost item?"
+msgstr "تبحث عن غرض فقدته؟"
+
+msgid "Looking for something?"
+msgstr "تبحث عن شيء؟"
+
+msgid "Looking out for each other"
+msgstr "نهتم ببعضنا"
+
+msgid "Lost"
+msgstr "مفقود"
+
+msgid "Lost & found"
+msgstr "المفقودات والمعثورات"
+
+msgid "Lost item"
+msgstr "غرض مفقود"
+
+msgid "Lost things."
+msgstr "أغراض تضيع."
+
+msgid "Made for the College of Computing."
+msgstr "لأهل كلية الحاسب."
+
+msgid "Main navigation"
+msgstr "التنقل الرئيسي"
+
+msgid "Make a connection"
+msgstr "أرسل رسالة خاصة"
+
+msgid "Make it easier to find"
+msgstr "قرّب البحث"
+
+msgid "Make someone’s day"
+msgstr "فرّح شخصًا"
+
+msgid "Manage your report"
+msgstr "إدارة بلاغك"
+
+msgid "Management key"
+msgstr "مفتاح الإدارة القديم"
+
+msgid "Meet safely"
+msgstr "لقاء آمن"
+
+msgid "Men’s building"
+msgstr "مبنى الطلاب"
+
+msgid "Message"
+msgstr "الرسالة"
+
+msgid "Message pages"
+msgstr "صفحات الرسائل"
+
+msgid "Message saved privately"
+msgstr "حُفظت الرسالة بشكل خاص"
+
+msgid "Message saved privately. The owner can read it in their inbox and reply using your email. No automatic notification is sent."
+msgstr "حُفظت الرسالة بشكل خاص. يقرأها صاحب البلاغ في صندوقه ويرد عبر بريدك. لا تُرسل إشعارات تلقائية."
+
+msgid "Messages, updates and happy endings. All in one place."
+msgstr "رسائلك، وتحديثاتك، والنهايات الحلوة. كلها بمكان واحد."
+
+msgid "Moderators review concerns manually. Submitting this form does not automatically remove a report."
+msgstr "يراجع المشرفون الملاحظات يدويًا. إرسالها لا يحذف البلاغ تلقائيًا."
+
+msgid "More happy returns."
+msgstr "ورجعات تفرّح."
+
+msgid "My reports"
+msgstr "بلاغاتي"
+
+msgid "My reports opens your inbox and status controls in the browser that created the report. Check it regularly; notifications are not automatic."
+msgstr "افتح «بلاغاتي» من المتصفح الذي أضاف البلاغ لتجد الرسائل وإعدادات الحالة. تابعه بانتظام؛ لا توجد إشعارات تلقائية."
+
+msgid "My reports | ReFound"
+msgstr "بلاغاتي | ReFound"
+
+msgid "My reports."
+msgstr "بلاغاتي."
+
+msgid "Need a hand?"
+msgstr "تحتاج مساعدة؟"
+
+msgid "Newest first"
+msgstr "الأحدث أولًا"
+
+msgid "Newest reports first."
+msgstr "أحدث البلاغات أولًا."
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "No account or management key. Your report belongs to this browser."
+msgstr "بدون حساب أو مفتاح إدارة. بلاغك مرتبط بهذا المتصفح."
+
+msgid "No account. No password. Your reports stay with this browser."
+msgstr "بدون حساب، بدون كلمة مرور. بلاغاتك تبقى في هذا المتصفح."
+
+msgid "No automatic email notification is sent."
+msgstr "لا تُرسل إشعارات بريدية تلقائية."
+
+msgid "No automatic notification is sent."
+msgstr "لا تُرسل إشعارات تلقائية."
+
+msgid "No messages yet. Share your public report link to help the right person find it."
+msgstr "لا توجد رسائل حتى الآن. شارك رابط البلاغ العام ليساعد في الوصول لصاحب الغرض."
+
+msgid "No photo added"
+msgstr "بدون صورة"
+
+msgid "No potential matches yet. Check back as new reports arrive, or look through the whole board."
+msgstr "لا توجد بلاغات متشابهة حتى الآن. ارجع مع وصول بلاغات جديدة أو تصفّح اللوحة كاملة."
+
+msgid "No recent reports in this space. Your report could be the start of a happy return."
+msgstr "لا توجد بلاغات حديثة هنا. يمكن بلاغك يكون بداية رجعة تفرّح."
+
+msgid "No reports in this browser yet."
+msgstr "ما عندك بلاغات في هذا المتصفح حتى الآن."
+
+msgid "Not assigned"
+msgstr "غير محدد"
+
+msgid "Not specified"
+msgstr "غير مذكور"
+
+msgid "Nothing here just yet"
+msgstr "ما لقينا شيئًا، حتى الآن"
+
+msgid "Now, keep the key to your next connection."
+msgstr "احفظ مفتاح البلاغ القديم."
+
+msgid "Older reports"
+msgstr "البلاغات القديمة"
+
+msgid "Oldest first"
+msgstr "الأقدم أولًا"
+
+msgid "One step closer"
+msgstr "خطوة أقرب"
+
+msgid "Only for reports created before device-based access. Verify its old key once to move it to this browser. New reports never use keys."
+msgstr "للبلاغات المضافة قبل نظام المتصفح فقط. تحقق بالمفتاح القديم مرة واحدة لنقل البلاغ لهذا المتصفح. البلاغات الجديدة لا تستخدم مفاتيح."
+
+msgid "Only the browser that created this report can manage it. The displayed device number does not grant access."
+msgstr "لا يمكن إدارة البلاغ إلا من متصفحه الأصلي. الرقم الظاهر لا يمنح الوصول."
+
+msgid "Only you and authorized moderators can read these. Check back here; automatic notifications are not sent."
+msgstr "لا يقرأها إلا أنت والمشرفون المصرّح لهم. تابعها هنا؛ لا تُرسل إشعارات تلقائية."
+
+msgid "Open my inbox"
+msgstr "فتح رسائلي"
+
+msgid "Open my report"
+msgstr "فتح بلاغي"
+
+msgid "Open navigation"
+msgstr "فتح القائمة"
+
+msgid "Open report and messages"
+msgstr "فتح البلاغ والرسائل"
+
+msgid "Open your report | ReFound"
+msgstr "فتح بلاغك | ReFound"
+
+msgid "Optional"
+msgstr "اختياري"
+
+msgid "Optional classroom or lab number, e.g. A-204. Never share access codes."
+msgstr "رقم القاعة أو المعمل اختياري، مثل A-204. لا تشارك رموز الدخول."
+
+msgid "Optional, but a clear photo can make recognition easier."
+msgstr "اختيارية، لكن الصورة الواضحة تسهّل التعرّف على الغرض."
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "Page"
+msgstr "صفحة"
+
+msgid "Paste a valid ReFound report link or report ID."
+msgstr "أدخل رابط بلاغ ReFound أو رقم بلاغ صحيحًا."
+
+msgid "Paste your report link or ID"
+msgstr "ألصق رابط البلاغ أو رقمه"
+
+msgid "Permanently delete report"
+msgstr "حذف البلاغ نهائيًا"
+
+msgid "Phone"
+msgstr "هاتف"
+
+msgid "Please check the details below"
+msgstr "راجع التفاصيل التالية"
+
+msgid "Please confirm deletion"
+msgstr "أكد الحذف"
+
+msgid "Please provide at least 10 characters."
+msgstr "اكتب 10 أحرف على الأقل."
+
+msgid "Please take a short break"
+msgstr "انتظر قليلًا"
+
+msgid "Please try again shortly. If this keeps happening, use the help page."
+msgstr "حاول بعد قليل. إذا استمرت المشكلة، راجع صفحة المساعدة."
+
+msgid "Potential matches compare item category, description words, color, building, classroom or area, and dates. This is rule-based matching. AI is not active. Suggestions are clues, not proof of ownership."
+msgstr "نقارن فئة الغرض وكلمات الوصف واللون والمبنى والقاعة أو المكان والتواريخ بقواعد محددة. الذكاء الاصطناعي غير مفعّل. الاقتراحات مؤشرات مساعدة، ولا تثبت الملكية."
+
+msgid "Potential matches for"
+msgstr "بلاغات قد تتشابه مع"
+
+msgid "Potential matches | ReFound"
+msgstr "البلاغات المتشابهة | ReFound"
+
+msgid "Potentially matched"
+msgstr "يوجد تشابه محتمل"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Privacy &amp; safety"
+msgstr "الخصوصية والسلامة"
+
+msgid "Private by design"
+msgstr "مساحة خاصة"
+
+msgid "Private messages"
+msgstr "الرسائل الخاصة"
+
+msgid "Private: visible only to authorized site administrators."
+msgstr "خاصة: لا تظهر إلا لمسؤولي الموقع المصرّح لهم."
+
+msgid "Public and private"
+msgstr "ما يظهر وما يبقى خاصًا"
+
+msgid "Publish report"
+msgstr "نشر البلاغ"
+
+msgid "ReFound does not verify ownership. For emergencies or unsafe situations, contact the appropriate local service."
+msgstr "لا يتحقق ReFound من الملكية. في الحالات الطارئة أو غير الآمنة، تواصل مع الجهة المختصة."
+
+msgid "ReFound home"
+msgstr "صفحة ReFound الرئيسية"
+
+msgid "ReFound — A little closer to home"
+msgstr "ReFound — أقرب لصاحبه"
+
+msgid "Ready to help?"
+msgstr "جاهز تساعد؟"
+
+msgid "Reason"
+msgstr "سبب الإبلاغ"
+
+msgid "Remove selected photo"
+msgstr "إزالة الصورة المختارة"
+
+msgid "Reply email"
+msgstr "بريد الرد"
+
+msgid "Reply using this private email"
+msgstr "للرد استخدم هذا البريد الخاص"
+
+msgid "Report ID"
+msgstr "رقم البلاغ"
+
+msgid "Report a found item"
+msgstr "الإبلاغ عن غرض عثرت عليه"
+
+msgid "Report a lost item"
+msgstr "الإبلاغ عن غرض مفقود"
+
+msgid "Report a lost or found item. A photo and classroom number can help someone recognize it."
+msgstr "أضف بلاغًا عن غرض فقدته أو وجدته. الصورة ورقم القاعة يساعدان في التعرّف عليه."
+
+msgid "Report abuse"
+msgstr "الإبلاغ عن مخالفة"
+
+msgid "Report link or ID"
+msgstr "رابط البلاغ أو رقمه"
+
+msgid "Report pages"
+msgstr "صفحات البلاغات"
+
+msgid "Report results"
+msgstr "نتائج البلاغات"
+
+msgid "Report submitted | ReFound"
+msgstr "تم نشر البلاغ | ReFound"
+
+msgid "Report type"
+msgstr "نوع البلاغ"
+
+msgid "Reported"
+msgstr "نُشر"
+
+msgid "Reports move to the archive after"
+msgstr "تنتقل البلاغات للأرشيف بعد"
+
+msgid "Reports older than"
+msgstr "بلاغات مرّ عليها أكثر من"
+
+msgid "Resolved"
+msgstr "مغلق"
+
+msgid "Resolved reports are not included in matching suggestions."
+msgstr "البلاغات المغلقة لا تدخل ضمن اقتراحات التشابه."
+
+msgid "Right where you left them."
+msgstr "مكان ما تركتها."
+
+msgid "Same category"
+msgstr "نفس فئة الغرض"
+
+msgid "Same classroom"
+msgstr "نفس القاعة"
+
+msgid "Same color"
+msgstr "نفس اللون"
+
+msgid "Search belongings"
+msgstr "ابحث عن غرض"
+
+msgid "Search lost items"
+msgstr "البحث عن المفقودات"
+
+msgid "Search the board and check the archive. Open a report to send its owner a private message."
+msgstr "ابحث في البلاغات والأرشيف. افتح البلاغ لترسل لصاحبه رسالة خاصة."
+
+msgid "See all reports"
+msgstr "كل البلاغات"
+
+msgid "Selected item photo"
+msgstr "معاينة صورة الغرض"
+
+msgid "Send a helpful message"
+msgstr "أرسل معلومة تساعد"
+
+msgid "Send a message from a report page. The owner reads it in My reports and can reply to the email you provide. No automatic email notification is sent; check your inbox regularly."
+msgstr "أرسل رسالة من صفحة البلاغ. يقرأها صاحبه في «بلاغاتي» ويرد على البريد الذي تكتبه. لا تُرسل إشعارات بريدية تلقائية؛ تابع صندوقك بانتظام."
+
+msgid "Send private message"
+msgstr "إرسال رسالة خاصة"
+
+msgid "Share a few details"
+msgstr "شارك التفاصيل"
+
+msgid "Shared description keywords"
+msgstr "كلمات مشتركة في الوصف"
+
+msgid "Shared privately with the report owner so they can reply."
+msgstr "يُشارك مع صاحب البلاغ بشكل خاص ليتمكن من الرد."
+
+msgid "Show all reports"
+msgstr "عرض جميع البلاغات"
+
+msgid "Similar general area"
+msgstr "مكان متقارب"
+
+msgid "Skip to content"
+msgstr "انتقل للمحتوى"
+
+msgid "Small acts. Happy returns."
+msgstr "مبادرات بسيطة. ورجعات تفرّح."
+
+msgid "Small steps. Better days."
+msgstr "خطوات بسيطة. وأيام أحلى."
+
+msgid "Something did not look right"
+msgstr "فيه شيء يحتاج مراجعة"
+
+msgid "Something familiar?"
+msgstr "يمكن تلقاه هنا؟"
+
+msgid "Sort by"
+msgstr "الترتيب"
+
+msgid "Start a connection"
+msgstr "ابدأ ببلاغ"
+
+msgid "Start with your building"
+msgstr "ابدأ بمبناك"
+
+msgid "Status"
+msgstr "حالة البلاغ"
+
+msgid "Stay in touch, privately"
+msgstr "تواصل بخصوصية"
+
+msgid "Still need help?"
+msgstr "ما زلت تحتاج مساعدة؟"
+
+msgid "Submit concern"
+msgstr "إرسال الملاحظة"
+
+msgid "Talk privately"
+msgstr "تواصل على الخاص"
+
+msgid "Tell our moderators about inappropriate content, a misleading report, or a privacy concern. Your concern is not shown publicly."
+msgstr "أخبر المشرفين عن محتوى مخالف أو بلاغ مضلل أو مشكلة خصوصية. لن تظهر ملاحظتك للعامة."
+
+msgid "Tell the campus what you’re looking for. We’ll show reports with shared details."
+msgstr "قل لأهل الكلية ماذا فقدت. بنعرض لك البلاغات التي تشترك مع بلاغك في التفاصيل."
+
+msgid "Thanks for looking out for someone. Share what you found and help make a connection."
+msgstr "شكرًا لاهتمامك. شارك تفاصيل ما وجدت وساعد الغرض يرجع لصاحبه."
+
+msgid "That action is not available"
+msgstr "هذا الإجراء غير متاح"
+
+msgid "That photo is too large"
+msgstr "حجم الصورة كبير"
+
+msgid "That upload is a little too large"
+msgstr "حجم الملف كبير"
+
+msgid "The community board"
+msgstr "لوحة أهل الكلية"
+
+msgid "The connection is still out there"
+msgstr "يمكن نلقاه قريب"
+
+msgid "The date cannot be in the future."
+msgstr "لا يمكن اختيار تاريخ في المستقبل."
+
+msgid "The item"
+msgstr "الغرض"
+
+msgid "The number is a reference, not a password. Clearing cookies, switching browsers or using a private window removes access. This includes shared devices: anyone using this browser can access its reports."
+msgstr "الرقم للتعريف فقط وليس كلمة مرور. مسح ملفات الارتباط أو تغيير المتصفح أو التصفح الخاص يفقد الوصول. على الجهاز المشترك، يستطيع أي مستخدم لنفس المتصفح إدارة بلاغاته."
+
+msgid "The old report is now linked to this browser. Its old key no longer works."
+msgstr "ارتبط البلاغ القديم بهذا المتصفح، وأصبح مفتاحه القديم غير صالح."
+
+msgid "The owner must check their management inbox. No automatic email notification is sent. Your reply email is shared privately so they can contact you."
+msgstr "يحتاج صاحب البلاغ لمراجعة صندوقه. لا تصله إشعارات بريدية تلقائية. يُشارك بريدك معه بشكل خاص ليتمكن من الرد."
+
+msgid "These details will appear on the public board. Fields marked * are required."
+msgstr "تظهر هذه التفاصيل للعامة. الحقول المعلّمة بنجمة * مطلوبة."
+
+msgid "This browser manages your report"
+msgstr "هذا المتصفح يدير بلاغك"
+
+msgid "This browser manages your report automatically. Find it later in My reports. Clearing cookies or changing browsers removes access."
+msgstr "يُربط بلاغك بهذا المتصفح تلقائيًا. تجده لاحقًا في «بلاغاتي». مسح ملفات الارتباط أو تغيير المتصفح يفقدك الوصول."
+
+msgid "This browser’s number"
+msgstr "رقم هذا المتصفح"
+
+msgid "This form has expired. Review your details, select your photo again if needed, and submit once more."
+msgstr "انتهت صلاحية النموذج. راجع بياناتك وأعد اختيار الصورة إن وجدت، ثم أرسل مرة ثانية."
+
+msgid "This key is shown once. Save it now: it opens your inbox and lets you resolve or delete your report."
+msgstr "يظهر المفتاح القديم مرة واحدة، ويفتح رسائل البلاغ القديم وإدارته."
+
+msgid "This might be mine"
+msgstr "يمكن هذا غرضي"
+
+msgid "This page needs permission"
+msgstr "هذه الصفحة تحتاج صلاحية"
+
+msgid "This removes your report, its photo and all private messages from the active site."
+msgstr "سيُحذف بلاغك وصورته وجميع رسائله الخاصة من الموقع نهائيًا."
+
+msgid "This report belongs to another browser"
+msgstr "هذا البلاغ مرتبط بمتصفح آخر"
+
+msgid "This report has been hidden from public pages for moderator review. You can still read your messages, update its status or delete it."
+msgstr "أخفى المشرفون البلاغ من الصفحات العامة للمراجعة. ما زال بإمكانك قراءة الرسائل وتحديث الحالة أو الحذف."
+
+msgid "This report has been resolved and is no longer accepting messages."
+msgstr "أُغلق هذا البلاغ ولم يعد يستقبل رسائل."
+
+msgid "This report is already resolved"
+msgstr "هذا البلاغ مغلق بالفعل"
+
+msgid "This report is archived"
+msgstr "هذا البلاغ مؤرشف"
+
+msgid "This report is archived and no longer accepts messages."
+msgstr "هذا البلاغ مؤرشف ولا يستقبل رسائل جديدة."
+
+msgid "This report is resolved and is no longer accepting messages."
+msgstr "هذا البلاغ مغلق ولا يستقبل رسائل جديدة."
+
+msgid "This report may have been removed, or the link may be incomplete. Let’s get you back to the board."
+msgstr "قد يكون البلاغ محذوفًا أو الرابط غير مكتمل. خلّنا نرجعك للبلاغات."
+
+msgid "This story has a happy ending"
+msgstr "هالحكاية انتهت بخير"
+
+msgid "Title"
+msgstr "اسم الغرض"
+
+msgid "Too many attempts. Please try again in ten minutes. Your information has not been submitted."
+msgstr "محاولات كثيرة. حاول بعد عشر دقائق. لم تُحفظ بياناتك."
+
+msgid "Too many sign-in attempts. Try again in ten minutes."
+msgstr "محاولات دخول كثيرة. حاول بعد عشر دقائق."
+
+msgid "Try a different word or a broader area. New reports may bring your item a little closer."
+msgstr "جرّب كلمة ثانية أو مكانًا أوسع. يمكن بلاغ جديد يقرّب لك غرضك."
+
+msgid "Two students helping a backpack find its way back across campus"
+msgstr "طالبان يساعدان حقيبة ترجع لصاحبها في الكلية"
+
+msgid "Unable to accept this submission."
+msgstr "تعذر قبول هذا الإرسال."
+
+msgid "Unlock my report"
+msgstr "فتح بلاغي القديم"
+
+msgid "Update status"
+msgstr "تحديث الحالة"
+
+msgid "Upload a valid JPEG or PNG image within the size limits."
+msgstr "ارفع صورة JPEG أو PNG صحيحة ضمن حدود الحجم."
+
+msgid "Use My reports in the original browser to resolve or delete a report. The archive keeps older reports separate from the current board."
+msgstr "افتح «بلاغاتي» من المتصفح الأصلي لإغلاق البلاغ أو حذفه. تظهر البلاغات القديمة في الأرشيف بشكل منفصل."
+
+msgid "Use a clear, recognizable item name."
+msgstr "اكتب اسمًا واضحًا للغرض."
+
+msgid "Use a general area, not an exact address or room."
+msgstr "اذكر مكانًا داخل الكلية، وأضف رقم القاعة في الحقل الاختياري."
+
+msgid "Use one of the controls on your management page."
+msgstr "استخدم الأزرار الموجودة في صفحة إدارة البلاغ."
+
+msgid "Use the original browser"
+msgstr "استخدم المتصفح الأصلي"
+
+msgid "Use the original browser to manage it. A report ID or device number cannot unlock it."
+msgstr "استخدم المتصفح الأصلي لإدارته. رقم البلاغ أو المتصفح لا يمنح الوصول."
+
+msgid "Use your management key to access your private report inbox."
+msgstr "استخدم وسيلة الوصول الأصلية لفتح رسائل البلاغ الخاصة."
+
+msgid "Verify distinctive details privately. Meet in a safe public place and never pay to claim an item. Report inappropriate content from the item page; moderators review it manually."
+msgstr "تحقق من التفاصيل المميزة على الخاص، والتقِ في مكان عام وآمن، ولا تدفع مالًا لاستعادة غرض. أبلغ عن المحتوى المخالف من صفحة البلاغ ليراجعه المشرفون."
+
+msgid "View potential matches"
+msgstr "عرض البلاغات المتشابهة"
+
+msgid "View public report"
+msgstr "عرض البلاغ العام"
+
+msgid "Visit the help page"
+msgstr "زيارة صفحة المساعدة"
+
+msgid "We could not link that report. Check its ID and old management key."
+msgstr "تعذر ربط البلاغ. راجع رقمه ومفتاحه القديم."
+
+msgid "We could not unlock that report. Check the report link and management key."
+msgstr "تعذر فتح البلاغ القديم. راجع الرابط ومفتاح الإدارة."
+
+msgid "We hit a small detour"
+msgstr "واجهنا مشكلة بسيطة"
+
+msgid "Welcome back."
+msgstr "يا هلا برجعتك."
+
+msgid "What are you looking for?"
+msgstr "ما الغرض الذي تبحث عنه؟"
+
+msgid "Women’s building"
+msgstr "مبنى الطالبات"
+
+msgid "You are signed into this report for one hour. Bookmark your management page and check back for private messages."
+msgstr "الوصول للبلاغ القديم متاح لمدة ساعة. احتفظ برابطه وتابع رسائله الخاصة."
+
+msgid "Your browser, your reports"
+msgstr "متصفحك وبلاغاتك"
+
+msgid "Your concern has been saved for moderator review. Thank you for helping keep ReFound safe."
+msgstr "حُفظت ملاحظتك ليراجعها المشرفون. شكرًا لمساعدتك في إبقاء ReFound آمنًا."
+
+msgid "Your concern is available for moderator review."
+msgstr "ملاحظتك متاحة لمراجعة المشرفين."
+
+msgid "Your contact information is not shown publicly. People send messages to your private report inbox."
+msgstr "بيانات تواصلك لا تظهر للعامة. تصلك الرسائل في صندوق البلاغ الخاص."
+
+msgid "Your key opens this door."
+msgstr "افتح بلاغك القديم."
+
+msgid "Your message goes to the owner’s private inbox."
+msgstr "تصل رسالتك لصندوق صاحب البلاغ الخاص."
+
+msgid "Your next connection starts here."
+msgstr "بلاغك الجاي يبدأ هنا."
+
+msgid "Your next connection will appear here."
+msgstr "رسالتك الجاية مكانها هنا."
+
+msgid "Your own little corner"
+msgstr "مساحتك الخاصة"
+
+msgid "Your private corner"
+msgstr "مساحتك الخاصة"
+
+msgid "Your private management key"
+msgstr "مفتاح إدارة البلاغ القديم"
+
+msgid "Your private report space"
+msgstr "مساحة بلاغك الخاصة"
+
+msgid "Your private report | ReFound"
+msgstr "بلاغك الخاص | ReFound"
+
+msgid "Your report and private messages have been deleted."
+msgstr "حُذف بلاغك ورسائله الخاصة."
+
+msgid "Your report is on the board."
+msgstr "بلاغك صار على اللوحة."
+
+msgid "Your report is published and saved in this browser’s My reports."
+msgstr "نُشر بلاغك وحُفظ في «بلاغاتي» بهذا المتصفح."
+
+msgid "Your report link and management key are all you need. No account, no password reset loop."
+msgstr "رابط البلاغ ومفتاحه القديم يتيحان الوصول للبلاغات القديمة فقط."
+
+msgid "Your report status has been updated."
+msgstr "تم تحديث حالة بلاغك."
+
+msgid "Your reports"
+msgstr "بلاغاتك"
+
+msgid "Your reports."
+msgstr "بلاغاتك."
+
+msgid "Your secure form session could not be verified. Reload the form and try again. Nothing was submitted."
+msgstr "تعذر التحقق من أمان النموذج. حدّث الصفحة وحاول مرة أخرى. لم تُحفظ أي بيانات."
+
+msgid "days and is carried out by the site’s scheduled cleanup. Owners can delete earlier."
+msgstr "يومًا، ويجري عبر التنظيف المجدول للموقع. ويمكن لصاحب البلاغ حذفه قبل ذلك."
+
+msgid "days and may be permanently deleted after"
+msgstr "يومًا، ويمكن حذفها نهائيًا بعد"
+
+msgid "days. Archived reports no longer accept messages."
+msgstr "يومًا. لا تستقبل البلاغات المؤرشفة رسائل جديدة."
+
+msgid "days. Keep personal details private."
+msgstr "يومًا. احتفظ بالتفاصيل الشخصية خاصة."
+
+msgid "days. Permanent deletion becomes eligible after"
+msgstr "يومًا. وتصبح قابلة للحذف النهائي بعد"
+
+msgid "e.g. Campus library"
+msgstr "مثلًا: مكتبة الكلية"
+
+msgid "find their way back."
+msgstr "ترجع لأصحابها."
+
+msgid "for"
+msgstr "عن"
+
+msgid "goes a long way."
+msgstr "يصنع فرقًا."
+
+msgid "item"
+msgstr "الغرض"
+
+msgid "of"
+msgstr "من"
+
+msgid "reports"
+msgstr "بلاغات"
+
+msgid "your next step."
+msgstr "خطوتك الجاية."

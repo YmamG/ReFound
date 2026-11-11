@@ -23,8 +23,17 @@ r=client.get('/',secure=True)
 assert r.status_code==200, r.status_code
 assert 'max-age=3600' in r['Strict-Transport-Security']
 assert settings.SESSION_COOKIE_SECURE and settings.CSRF_COOKIE_SECURE
+assert r.cookies[settings.REFOUND_DEVICE_COOKIE]['secure']
+assert r.cookies[settings.REFOUND_DEVICE_COOKIE]['httponly']
+assert 'private' in r['Cache-Control']
+arabic = client.get('/', secure=True, HTTP_ACCEPT_LANGUAGE='ar')
+assert 'lang="ar" dir="rtl"' in arabic.content.decode()
+assert 'البحث عن المفقودات' in arabic.content.decode()
+language = client.post('/i18n/setlang/', {'language': 'en', 'next': '/'}, secure=True)
+assert language.cookies[settings.LANGUAGE_COOKIE_NAME]['secure']
+assert language.cookies[settings.LANGUAGE_COOKIE_NAME]['httponly']
 from django.contrib.staticfiles.storage import staticfiles_storage
-for name in ['css/style.css','js/main.js','images/icons.svg','images/home-illustration.svg','images/favicon.svg']:
+for name in ['css/style.css','js/main.js','images/icons.svg','images/campus-illustration.svg','images/favicon.svg','fonts/inter-latin-400.woff2','fonts/inter-latin-500.woff2','fonts/noto-arabic-400.woff2','fonts/noto-arabic-500.woff2']:
     url=staticfiles_storage.url(name)
     r=client.get(url,secure=True)
     assert r.status_code==200,(url,r.status_code)

@@ -1,3 +1,4 @@
+from django.utils.translation import gettext as _
 """Explainable matching; no external APIs or image processing required."""
 import re
 from dataclasses import dataclass
@@ -17,31 +18,34 @@ def words(value):
 
 
 def score_pair(report, candidate):
-    if report.kind == candidate.kind or Report.Status.RESOLVED in (report.status, candidate.status):
+    if report.building != candidate.building or report.is_archived or candidate.is_archived or report.kind == candidate.kind or Report.Status.RESOLVED in (report.status, candidate.status):
         return 0, ()
     score, reasons = 0, []
     if report.category == candidate.category:
         score += 30
-        reasons.append("Same category")
+        reasons.append(_("Same category"))
     if words(report.title + " " + report.description) & words(candidate.title + " " + candidate.description):
         score += 25
-        reasons.append("Shared description keywords")
+        reasons.append(_("Shared description keywords"))
     if report.color.strip() and report.color.strip().casefold() == candidate.color.strip().casefold():
         score += 15
-        reasons.append("Same color")
-    if words(report.location) & words(candidate.location):
+        reasons.append(_("Same color"))
+    if report.classroom.strip() and report.classroom.strip().casefold() == candidate.classroom.strip().casefold():
         score += 20
-        reasons.append("Similar general area")
+        reasons.append(_("Same classroom"))
+    elif words(report.location) & words(candidate.location):
+        score += 20
+        reasons.append(_("Similar general area"))
     if abs((report.event_date - candidate.event_date).days) <= 7:
         score += 10
-        reasons.append("Dates within seven days")
+        reasons.append(_("Dates within seven days"))
     return score, tuple(reasons)
 
 
 def potential_matches(report, limit=20):
-    if report.status == Report.Status.RESOLVED or report.is_hidden:
+    if report.status == Report.Status.RESOLVED or report.is_hidden or report.is_archived:
         return []
-    candidates = Report.objects.filter(is_hidden=False).exclude(kind=report.kind).exclude(status=Report.Status.RESOLVED)
+    candidates = Report.objects.filter(is_hidden=False, building=report.building).exclude(kind=report.kind).exclude(status=Report.Status.RESOLVED)
     matches = []
     for candidate in candidates.iterator():
         score, reasons = score_pair(report, candidate)

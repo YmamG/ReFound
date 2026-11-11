@@ -6,11 +6,11 @@ from .models import Report, Claim, AbuseReport
 
 @admin.register(Report)
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ('title', 'kind', 'category', 'status', 'is_hidden', 'created_at')
-    list_filter = ('is_hidden', 'kind', 'category', 'status')
+    list_display = ('title', 'kind', 'category', 'status', 'building', 'is_hidden', 'created_at')
+    list_filter = ('is_hidden', 'kind', 'category', 'status', 'building')
     search_fields = ('title', 'description', '=id')
     exclude = ('management_hash', 'image')
-    readonly_fields = ('id', 'image_preview', 'created_at', 'updated_at')
+    readonly_fields = ('owner', 'id', 'image_preview', 'created_at', 'updated_at')
     actions = ('hide_reports', 'restore_reports')
 
     def has_add_permission(self, request):

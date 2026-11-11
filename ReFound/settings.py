@@ -41,9 +41,11 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'core.middleware.RequestSafetyMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'core.middleware.DeviceMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -90,7 +92,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ar'
+LANGUAGES = [('ar', 'العربية'), ('en', 'English')]
+LOCALE_PATHS = [BASE_DIR / 'locale']
 TIME_ZONE = os.environ.get('DJANGO_TIME_ZONE', 'Asia/Riyadh')
 USE_I18N = True
 USE_TZ = True
@@ -116,6 +120,9 @@ SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
+LANGUAGE_COOKIE_SECURE = not DEBUG
+LANGUAGE_COOKIE_HTTPONLY = True
+LANGUAGE_COOKIE_SAMESITE = 'Lax'
 SECURE_REFERRER_POLICY = 'same-origin'
 
 
@@ -155,3 +162,11 @@ STORAGES = {
     'staticfiles': {'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage' if DEBUG else 'whitenoise.storage.CompressedManifestStaticFilesStorage'},
 }
 TEMPLATES[0]['OPTIONS']['context_processors'].append('core.context.site')
+
+REFOUND_ARCHIVE_DAYS = int(os.environ.get('REFOUND_ARCHIVE_DAYS', '60'))
+REFOUND_DELETE_DAYS = int(os.environ.get('REFOUND_DELETE_DAYS', '365'))
+if not 1 <= REFOUND_ARCHIVE_DAYS < REFOUND_DELETE_DAYS:
+    raise ImproperlyConfigured('Retention requires 1 <= archive days < delete days.')
+
+REFOUND_DEVICE_COOKIE = 'refound_device'
+REFOUND_DEVICE_COOKIE_AGE = 365 * 24 * 3600

@@ -1,7 +1,8 @@
 from django.contrib.staticfiles import finders
-from django.test import TestCase
+from django.test import TestCase, override_settings
 
 
+@override_settings(LANGUAGE_CODE='en')
 class PublicPageTests(TestCase):
     def test_home_page_uses_shared_navigation(self):
         response = self.client.get('/')
@@ -45,7 +46,7 @@ from .services.matching import potential_matches, score_pair
 
 
 def report_data(**changes):
-    data = dict(title='Blue laptop bag', description='A blue laptop bag with a fabric strap.', category='bags', color='blue', location='Campus library', event_date=timezone.localdate().isoformat(), contact_method='email', contact_info='private@example.com')
+    data = dict(title='Blue laptop bag', description='A blue laptop bag with a fabric strap.', category='bags', building='students', color='blue', location='Campus library', event_date=timezone.localdate().isoformat(), contact_method='email', contact_info='private@example.com')
     data.update(changes)
     return data
 
@@ -60,7 +61,7 @@ def make_report(**changes):
     return Report.objects.create(**data)
 
 
-@override_settings(SESSION_COOKIE_SECURE=False, CSRF_COOKIE_SECURE=False)
+@override_settings(SESSION_COOKIE_SECURE=False, CSRF_COOKIE_SECURE=False, LANGUAGE_CODE='en')
 class MVPTests(TestCase):
     def setUp(self):
         self.media = TemporaryDirectory()
@@ -80,20 +81,20 @@ class MVPTests(TestCase):
     def unlock(self, report, client=None):
         return (client or self.client).post(self.url('manage', report), {'action': 'unlock', 'token': 'test-owner-key'})
 
-    def test_both_submission_workflows_hash_keys_and_keep_contacts_private(self):
+    def test_both_submission_workflows_use_private_device_ownership(self):
         for kind in ('lost', 'found'):
             response = self.post_report(kind, report_data())
-            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 302)
             report = Report.objects.get(kind=kind)
-            token = response.context['token']
-            self.assertTrue(check_password(token, report.management_hash))
-            self.assertNotEqual(token, report.management_hash)
-            self.assertNotIn(token, str(dict(self.client.session)))
+            self.assertIsNotNone(report.owner_id)
+            from django.contrib.auth.hashers import is_password_usable
+            self.assertFalse(is_password_usable(report.management_hash))
+            self.assertNotIn(self.client.cookies['refound_device'].value, str(dict(self.client.session)))
             self.assertIn('no-store', response['Cache-Control'])
             for name in ('detail', 'matches', 'manage'):
                 page = self.client.get(self.url(name, report))
                 self.assertNotContains(page, 'private@example.com')
-                self.assertNotContains(page, token)
+                self.assertNotContains(page, self.client.cookies['refound_device'].value)
             self.assertNotContains(self.client.get(reverse('core:browse')), 'private@example.com')
 
     def test_model_validation(self):
@@ -122,7 +123,7 @@ class MVPTests(TestCase):
         image.save(output, format='PNG')
         upload = SimpleUploadedFile('unsafe-name.png', output.getvalue() + b'<script>bad</script>', content_type='image/png')
         response = self.post_report('found', report_data(image=upload))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         report = Report.objects.get()
         self.assertTrue(report.image.name.endswith('.jpg'))
         self.assertNotIn('unsafe-name', report.image.name)

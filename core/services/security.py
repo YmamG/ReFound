@@ -49,5 +49,7 @@ def grant_access(request, report):
 
 
 def has_access(request, report):
+    if report.owner_id:
+        return request.device.pk == report.owner_id
     grant = request.session.get('manage_' + str(report.pk))
     return isinstance(grant, dict) and grant.get('expires', 0) > timezone.now().timestamp() and constant_time_compare(grant.get('fingerprint', ''), fingerprint(report))

@@ -28,7 +28,7 @@ def photo_bytes(mode='RGB', size=(32, 32)):
     return output.getvalue()
 
 
-@override_settings(SESSION_COOKIE_SECURE=False, CSRF_COOKIE_SECURE=False)
+@override_settings(SESSION_COOKIE_SECURE=False, CSRF_COOKIE_SECURE=False, LANGUAGE_CODE='en')
 class LaunchWorkflowTests(TestCase):
     def setUp(self):
         directory = TemporaryDirectory()
@@ -53,9 +53,9 @@ class LaunchWorkflowTests(TestCase):
         nonce = self.client.get(url).context['submission_id']
         data = {**report_data(), 'submission_id': nonce}
         response = self.client.post(url, data)
-        key = response.context['token']
+        key = self.client.cookies['refound_device'].value
         report = Report.objects.get()
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         self.assertNotIn(key, str(dict(self.client.session)))
         repeated = self.client.post(url, data)
         self.assertRedirects(repeated, self.url('manage', report))
@@ -70,7 +70,7 @@ class LaunchWorkflowTests(TestCase):
         self.assertContains(response, 'Blue laptop bag', status_code=400)
         self.assertEqual(Report.objects.count(), 0)
         data = {**report_data(), 'submission_id': response.context['submission_id']}
-        self.assertEqual(self.client.post(url, data).status_code, 200)
+        self.assertEqual(self.client.post(url, data).status_code, 302)
         self.assertEqual(Report.objects.count(), 1)
 
     def test_pending_form_storage_is_bounded(self):
@@ -86,7 +86,7 @@ class LaunchWorkflowTests(TestCase):
         self.assertContains(denied, 'Reload the form', status_code=403)
         self.assertEqual(Report.objects.count(), 0)
         response = client.post(url, {**report_data(), 'submission_id': nonce}, HTTP_X_CSRFTOKEN=client.cookies['csrftoken'].value)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(Report.objects.count(), 1)
 
     def test_owner_lookup_accepts_id_and_management_or_public_link(self):
@@ -331,6 +331,7 @@ class LaunchWorkflowTests(TestCase):
         self.assertNotContains(response, 'type="file"')
 
 
+@override_settings(LANGUAGE_CODE='en')
 class NetworkBoundaryTests(TestCase):
     def test_untrusted_proxy_header_cannot_bypass_rate_limit(self):
         request = RequestFactory().post('/', REMOTE_ADDR='198.51.100.5', HTTP_X_FORWARDED_FOR='192.0.2.10')

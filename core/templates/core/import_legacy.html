@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% load i18n %}
+{% block title %}{% translate 'Link an older report | ReFound' %}{% endblock %}
+{% block content %}<div class="container page-section narrow"><header class="page-heading"><h1>{% translate 'Link an older report' %}</h1><p>{% translate 'Only for reports created before device-based access. Verify its old key once to move it to this browser. New reports never use keys.' %}</p></header><form method="post" class="form-card">{% csrf_token %}{% include 'core/includes/form_errors.html' %}{% for field in form %}{% include 'core/includes/field.html' %}{% endfor %}<button class="button" type="submit">{% translate 'Link to this browser' %}</button></form></div>{% endblock %}
