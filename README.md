@@ -4,6 +4,12 @@ A lost-and-found board for the College of Computing, with Arabic/English interfa
 
 **AI experimentation is frozen. MiniLM, CLIP and other AI models are not active in submission, browsing or matching.** Existing `experiments/` files are separate and are not needed to run or deploy the app.
 
+## Design preview
+
+[Arabic desktop preview](docs/screenshots/home-ar-desktop.png) · [Arabic mobile preview](docs/screenshots/home-ar-mobile.png)
+
+These screenshots use disposable fictional browser-test data, not real reports or personal contact information.
+
 ## Run locally — Windows PowerShell
 
 Open the actual repository directory containing **manage.py**, **requirements.txt**, **core/** and **ReFound/**. If your project was downloaded/cloned inside another ReFound folder, do not run these commands in the outer folder.
