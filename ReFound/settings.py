@@ -170,3 +170,7 @@ if not 1 <= REFOUND_ARCHIVE_DAYS < REFOUND_DELETE_DAYS:
 
 REFOUND_DEVICE_COOKIE = 'refound_device'
 REFOUND_DEVICE_COOKIE_AGE = 365 * 24 * 3600
+
+# Experimental branch: public offline AI preview, with automatic rule fallback.
+REFOUND_AI_PREVIEW_ENABLED = os.environ.get('REFOUND_AI_PREVIEW_ENABLED', 'True').lower() == 'true'
+REFOUND_AI_MODEL_PATH = os.environ.get('REFOUND_AI_MODEL_PATH', '')

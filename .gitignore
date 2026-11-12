@@ -12,3 +12,6 @@ staticfiles/
 .coverage
 htmlcov/
 .pytest_cache/
+
+# Offline model provisioned only for the experimental AI branch.
+local-models/

@@ -1,0 +1,31 @@
+{
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "device": "CPU",
+  "threads": 2,
+  "model_startup_seconds": 7.512,
+  "first_4_text_batch_seconds": 0.425,
+  "warm_4_text_batch_seconds": 0.043,
+  "process_peak_rss_mib_linux": 767.9,
+  "snapshot_storage_mib": 476.4,
+  "synthetic_smoke_only_not_accuracy": true,
+  "results": [
+    {
+      "title": "Black laptop bag",
+      "blend": 89.8,
+      "rule": 100,
+      "cosine": 0.7093
+    },
+    {
+      "title": "Red backpack",
+      "blend": 72.2,
+      "rule": 85,
+      "cosine": 0.4829
+    },
+    {
+      "title": "Leather wallet",
+      "blend": 57.4,
+      "rule": 60,
+      "cosine": 0.5256
+    }
+  ]
+}

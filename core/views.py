@@ -343,3 +343,13 @@ def match_game(request):
         'form': form, 'submitted': submitted, 'results': results,
         'advanced_open': advanced_open, 'scope_label': dict(Report.Building.choices).get(scope, ''),
     })
+
+
+@never_cache
+@require_safe
+def ai_preview(request, pk):
+    from .services.ai_matching import preview_matches
+    report = public_report(pk)
+    if not allow_submission(request, scope='ai-preview'):
+        return throttled(request)
+    return render(request, 'core/ai_preview.html', {'report': report, **preview_matches(report)})

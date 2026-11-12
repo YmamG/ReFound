@@ -84,6 +84,12 @@ msgstr "طالبة تبحث عن مفتاح مفقود في الحرم الجا�
 msgid "A way back."
 msgstr "له رجعة."
 
+msgid "AI is disabled or unavailable. Showing the rule-based fallback."
+msgstr "الذكاء الاصطناعي معطّل أو غير متاح. تظهر نتائج المقارنة بالقواعد بدلًا منه."
+
+msgid "AI matching preview"
+msgstr "معاينة المطابقة بالذكاء الاصطناعي"
+
 msgid "Active"
 msgstr "نشط"
 
@@ -128,6 +134,9 @@ msgstr "فقدت غرضًا، أو عثرت على غرض وتبحث عن صاح
 
 msgid "Area inside the College of Computing, e.g. library or first-floor corridor."
 msgstr "مكان داخل كلية الحاسب، مثل المكتبة أو ممر الدور الأول."
+
+msgid "Back to administration"
+msgstr "العودة إلى لوحة الإدارة"
 
 msgid "Back to report"
 msgstr "العودة للبلاغ"
@@ -351,6 +360,9 @@ msgstr "التاريخ"
 msgid "Every little thing."
 msgstr "كل غرض صغير."
 
+msgid "Experimental matching"
+msgstr "مطابقة تجريبية"
+
 msgid "Explore potential matches"
 msgstr "عرض البلاغات المتشابهة"
 
@@ -528,6 +540,9 @@ msgstr "ربطه بهذا المتصفح"
 msgid "Little things. Real connections."
 msgstr "أغراض صغيرة، ولفتات تصنع فرقًا."
 
+msgid "Local multilingual MiniLM with rule-based reranking. Experimental weights; no acceptance threshold has been validated."
+msgstr "نموذج MiniLM محلي متعدد اللغات مع قواعد لإعادة الترتيب. أوزان الترتيب تجريبية، ولم تُعتمد عتبة لقبول النتائج."
+
 msgid "Lock this page"
 msgstr "قفل الصفحة القديمة"
 
@@ -653,6 +668,9 @@ msgstr "لا تُرسل إشعارات تلقائية."
 
 msgid "No close reports yet"
 msgstr "لا توجد بلاغات قريبة من وصفك حاليًا"
+
+msgid "No eligible reports yet."
+msgstr "لا توجد بلاغات تستوفي شروط المقارنة حاليًا."
 
 msgid "No messages yet. Share your public report link to help the right person find it."
 msgstr "لا توجد رسائل حتى الآن. شارك رابط البلاغ العام ليساعد في الوصول لصاحب الغرض."
@@ -789,6 +807,9 @@ msgstr "البلاغات المتشابهة | ReFound"
 msgid "Potentially matched"
 msgstr "يوجد تشابه محتمل"
 
+msgid "Preview limited to the latest 200 eligible reports."
+msgstr "تقتصر المعاينة على أحدث 200 بلاغ يستوفي شروط المقارنة."
+
 msgid "Previous"
 msgstr "السابق"
 
@@ -809,6 +830,9 @@ msgstr "ما يظهر وما يبقى خاصًا"
 
 msgid "Publish report"
 msgstr "نشر البلاغ"
+
+msgid "Ranking points"
+msgstr "نقاط الترتيب"
 
 msgid "ReFound does not verify ownership. For emergencies or unsafe situations, contact the appropriate local service."
 msgstr "لا يتحقق ReFound من الملكية. في الحالات الطارئة أو غير الآمنة، تواصل مع الجهة المختصة."
@@ -884,6 +908,9 @@ msgstr "البلاغات المغلقة لا تدخل ضمن اقتراحات ا
 
 msgid "Right where you left them."
 msgstr "حيث تركتها."
+
+msgid "Rule points"
+msgstr "نقاط القواعد"
 
 msgid "Same category"
 msgstr "الفئة نفسها"
@@ -966,6 +993,9 @@ msgstr "هل تجد ما تبحث عنه هنا؟"
 msgid "Sort by"
 msgstr "الترتيب"
 
+msgid "Staff-only experiment"
+msgstr "تجربة خاصة بالمشرف"
+
 msgid "Start a connection"
 msgstr "ابدأ ببلاغ"
 
@@ -998,6 +1028,9 @@ msgstr "قل لأهل الكلية ماذا فقدت. بنعرض لك البلا
 
 msgid "Tell us the item and its color. Turn over the closest reports, one card at a time. Add a place or classroom when you need a better clue."
 msgstr "أدخل اسم الغرض ولونه، ثم استعرض أقرب البلاغات بطاقةً تلو الأخرى. أضف المكان أو رقم القاعة للحصول على نتائج أدق."
+
+msgid "Text cosine similarity"
+msgstr "التشابه النصي بجيب التمام"
 
 msgid "Thanks for looking out for someone. Share what you found and help make a connection."
 msgstr "شكرًا لاهتمامك. شارك تفاصيل ما وجدت وساعد الغرض يرجع لصاحبه."
@@ -1049,6 +1082,9 @@ msgstr "يُربط بلاغك بهذا المتصفح تلقائيًا. تجده
 
 msgid "This browser’s number"
 msgstr "رقم هذا المتصفح"
+
+msgid "This experiment does not change public matching or report status. Scores are not ownership probabilities."
+msgstr "لا تغيّر هذه التجربة المطابقة العامة أو حالة البلاغ. الدرجات لا تعبّر عن احتمالية الملكية."
 
 msgid "This form has expired. Review your details, select your photo again if needed, and submit once more."
 msgstr "انتهت صلاحية النموذج. راجع بياناتك وأعد اختيار الصورة إن وجدت، ثم أرسل مرة ثانية."
@@ -1106,6 +1142,9 @@ msgstr "جرّب كلمة أخرى أو وسّع نطاق المكان. قد ت�
 
 msgid "Try a simpler item name or fewer extra details. You can also add a lost report and check back later."
 msgstr "جرّب اسمًا أبسط للغرض أو تفاصيل إضافية أقل. يمكنك أيضًا إضافة بلاغ عن غرضك المفقود والعودة لاحقًا."
+
+msgid "Try experimental AI matching"
+msgstr "جرّب المطابقة بالذكاء الاصطناعي"
 
 msgid "Two students helping a backpack find its way back across campus"
 msgstr "طالبان يساعدان حقيبة ترجع لصاحبها في الكلية"

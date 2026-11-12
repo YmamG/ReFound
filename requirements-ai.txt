@@ -1,0 +1,3 @@
+# Optional experimental branch only. Install CPU torch first; see docs/AI_PREVIEW.md.
+-r requirements.txt
+sentence-transformers==4.1.0

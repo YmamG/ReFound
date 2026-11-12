@@ -6,12 +6,16 @@ from .models import Report, Claim, AbuseReport
 
 @admin.register(Report)
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ('title', 'kind', 'category', 'status', 'building', 'is_hidden', 'created_at')
+    list_display = ('title', 'kind', 'category', 'status', 'building', 'is_hidden', 'created_at', 'ai_preview_link')
     list_filter = ('is_hidden', 'kind', 'category', 'status', 'building')
     search_fields = ('title', 'description', '=id')
     exclude = ('management_hash', 'image')
     readonly_fields = ('owner', 'id', 'image_preview', 'created_at', 'updated_at')
     actions = ('hide_reports', 'restore_reports')
+
+    @admin.display(description='Experimental AI preview')
+    def ai_preview_link(self, obj):
+        return format_html('<a href="{}">Preview matches</a>', reverse('core:ai_preview', args=[obj.pk]))
 
     def has_add_permission(self, request):
         return False

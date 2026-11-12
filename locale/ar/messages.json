@@ -438,5 +438,18 @@
   "Yellow": "أصفر",
   "Help keep ReFound safe": "ساعدنا في الحفاظ على أمان ReFound",
   "Nothing here yet": "لا توجد نتائج حتى الآن",
-  "Show additional information": "إظهار معلومات إضافية"
+  "Show additional information": "إظهار معلومات إضافية",
+  "Staff-only experiment": "تجربة خاصة بالمشرف",
+  "AI matching preview": "معاينة المطابقة بالذكاء الاصطناعي",
+  "This experiment does not change public matching or report status. Scores are not ownership probabilities.": "لا تغيّر هذه التجربة المطابقة العامة أو حالة البلاغ. الدرجات لا تعبّر عن احتمالية الملكية.",
+  "Back to administration": "العودة إلى لوحة الإدارة",
+  "AI is disabled or unavailable. Showing the rule-based fallback.": "الذكاء الاصطناعي معطّل أو غير متاح. تظهر نتائج المقارنة بالقواعد بدلًا منه.",
+  "Local multilingual MiniLM with rule-based reranking. Experimental weights; no acceptance threshold has been validated.": "نموذج MiniLM محلي متعدد اللغات مع قواعد لإعادة الترتيب. أوزان الترتيب تجريبية، ولم تُعتمد عتبة لقبول النتائج.",
+  "Preview limited to the latest 200 eligible reports.": "تقتصر المعاينة على أحدث 200 بلاغ يستوفي شروط المقارنة.",
+  "Ranking points": "نقاط الترتيب",
+  "Rule points": "نقاط القواعد",
+  "Text cosine similarity": "التشابه النصي بجيب التمام",
+  "No eligible reports yet.": "لا توجد بلاغات تستوفي شروط المقارنة حاليًا.",
+  "Experimental matching": "مطابقة تجريبية",
+  "Try experimental AI matching": "جرّب المطابقة بالذكاء الاصطناعي"
 }

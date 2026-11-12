@@ -17,6 +17,7 @@ urlpatterns = [
     path('reports/new/<str:kind>/', views.submit, name='submit'),
     path('reports/confirmation/', views.confirmation, name='confirmation'),
     path('reports/<uuid:pk>/', views.detail, name='detail'),
+    path('reports/<uuid:pk>/ai-preview/', views.ai_preview, name='ai_preview'),
     path('reports/<uuid:pk>/matches/', views.matches, name='matches'),
     path('reports/<uuid:pk>/image/', views.image, name='image'),
     path('reports/<uuid:pk>/message/', views.claim, name='claim'),

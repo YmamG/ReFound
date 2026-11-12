@@ -2,7 +2,7 @@
 
 A lost-and-found board for the College of Computing, with Arabic/English interfaces, separate men's/women's building views, private messages and simple rule-based suggestions. Built with Django templates and local CSS/JavaScript. No frontend framework, paid API or ML runtime is required.
 
-**Public matching remains rule-based. AI work is isolated on a separate experimental branch.** Existing `experiments/` files are separate and are not needed to run or deploy the app.
+**Experimental branch: visitors can open AI matching from any public report without an account. Regular search still uses rules, and AI falls back to rules if its local model is unavailable.** Existing `experiments/` files are separate and are not needed to run or deploy the app.
 
 ## Design preview
 
@@ -159,7 +159,7 @@ The homepage follows the supplied MindMarket reference: cream paper, oversized c
 
 **Search lost items** opens `/find-match/`: enter item + color, optionally open extra details, then review actual reports in ranked cards. Previous/next and keyboard controls enhance an ordered list that also works without JavaScript. **Browse reports** retains the existing page and filters. See [search rules, limitations and assets](docs/MATCH_SEARCH.md).
 
-Matching remains rule-based. AI is not active in public workflows. The ordinary application needs no ML packages. Apply all migrations when updating. Nothing in this update deploys or pushes the project.
+Matching remains rule-based. AI is not active in public workflows. An optional public preview is documented below; the ordinary application needs no ML packages. Apply all migrations when updating. Nothing in this update deploys or pushes the project.
 
 ## Optional details, bilingual comparison and administration
 
@@ -173,3 +173,5 @@ python manage.py runserver
 ```
 
 Open `http://127.0.0.1:8000/admin/`. The account can edit/delete reports, hide/restore them and review abuse. Passwords are prompted locally; there is no shared default password. GitHub never transfers administrator accounts, databases or passwords. To reset a local password, run `python manage.py changepassword USERNAME`.
+
+AI work has resumed as a **public opt-in offline preview on this branch**. The ordinary matching page still uses rules; a separate button opens AI results. See [setup, actual CPU/RAM measurements and limitations](docs/AI_PREVIEW.md). No ML packages are required for the ordinary app; no models or credentials belong in Git.
