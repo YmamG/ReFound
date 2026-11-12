@@ -2,7 +2,7 @@
 
 A lost-and-found board for the College of Computing, with Arabic/English interfaces, separate men's/women's building views, private messages and simple rule-based suggestions. Built with Django templates and local CSS/JavaScript. No frontend framework, paid API or ML runtime is required.
 
-**AI experimentation is frozen. MiniLM, CLIP and other AI models are not active in submission, browsing or matching.** Existing `experiments/` files are separate and are not needed to run or deploy the app.
+**Public matching remains rule-based. AI work is isolated on a separate experimental branch.** Existing `experiments/` files are separate and are not needed to run or deploy the app.
 
 ## Design preview
 
@@ -159,4 +159,17 @@ The homepage follows the supplied MindMarket reference: cream paper, oversized c
 
 **Search lost items** opens `/find-match/`: enter item + color, optionally open extra details, then review actual reports in ranked cards. Previous/next and keyboard controls enhance an ordered list that also works without JavaScript. **Browse reports** retains the existing page and filters. See [search rules, limitations and assets](docs/MATCH_SEARCH.md).
 
-Matching remains rule-based. AI research is frozen and experimental AI is not active in public workflows. These changes need no migrations or new application packages. Nothing in this update deploys or pushes the project.
+Matching remains rule-based. AI is not active in public workflows. The ordinary application needs no ML packages. Apply all migrations when updating. Nothing in this update deploys or pushes the project.
+
+## Optional details, bilingual comparison and administration
+
+Descriptions are optional (if supplied, at least 10 characters). Classroom, description and photo controls are under **Show additional information**; validation errors reopen the section. Browse starts with search/type and keeps other filters in the same disclosure. Common Arabic/English colors and item aliases are compared consistently in browse and both rule-based search services, including `أسود`, `اسود` and `black`. This explicit glossary does not translate arbitrary text.
+
+After updating, run `python manage.py migrate`. To create your **own local** administrator securely:
+
+```powershell
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+Open `http://127.0.0.1:8000/admin/`. The account can edit/delete reports, hide/restore them and review abuse. Passwords are prompted locally; there is no shared default password. GitHub never transfers administrator accounts, databases or passwords. To reset a local password, run `python manage.py changepassword USERNAME`.

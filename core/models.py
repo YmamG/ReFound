@@ -61,7 +61,7 @@ class Report(models.Model):
     classroom = models.CharField(max_length=30, blank=True, help_text=_("Optional classroom or lab number, e.g. A-204. Never share access codes."))
     kind = models.CharField(max_length=5, choices=Kind.choices)
     title = models.CharField(max_length=120, validators=[MinLengthValidator(3)])
-    description = models.TextField(max_length=3000, validators=[MinLengthValidator(10)])
+    description = models.TextField(max_length=3000, blank=True, validators=[MinLengthValidator(10)])
     category = models.CharField(max_length=20, choices=Category.choices)
     color = models.CharField(max_length=50, blank=True)
     location = models.CharField(max_length=120, help_text=_("General area only, e.g. campus library. No room numbers or addresses."))

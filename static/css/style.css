@@ -3135,3 +3135,9 @@ html[dir=rtl] .card-body h3 {
 main > .page-section {animation:content-arrive 240ms var(--ease-out) both}
 @keyframes content-arrive {from{opacity:.65;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){main > .page-section{animation:none!important}}
+
+/* Native disclosures preserve all fields and remain usable without JavaScript. */
+.additional-info{border-block:1px solid var(--line);margin-block:20px}
+.additional-info summary{cursor:pointer;padding:18px 4px;font-weight:500;min-height:52px}
+.additional-info-body{padding-block:10px 20px}
+.additional-info-body fieldset{margin-bottom:0}

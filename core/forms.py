@@ -32,6 +32,7 @@ class SpamProtectedForm(forms.Form):
 class ReportForm(SpamProtectedForm, forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields['description'].required = False
         self.fields['building'].required = True
         self.fields['building'].choices = [('', _('Choose a building')), *Report.Building.choices]
         self.fields['classroom'].label = _('Classroom / lab number')

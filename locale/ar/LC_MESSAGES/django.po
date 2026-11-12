@@ -936,6 +936,9 @@ msgstr "تفاصيل مشتركة للغرض"
 msgid "Shared privately with the report owner so they can reply."
 msgstr "يُشارك مع صاحب البلاغ بشكل خاص ليتمكن من الرد."
 
+msgid "Show additional information"
+msgstr "إظهار معلومات إضافية"
+
 msgid "Show all reports"
 msgstr "عرض جميع البلاغات"
 

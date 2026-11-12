@@ -3,6 +3,7 @@ from django.utils.translation import gettext as _
 import re
 from dataclasses import dataclass
 from core.models import Report
+from .item_search import item_tokens, color_similarity, room_key
 
 
 @dataclass(frozen=True)
@@ -24,13 +25,13 @@ def score_pair(report, candidate):
     if report.category == candidate.category:
         score += 30
         reasons.append(_("Same category"))
-    if words(report.title + " " + report.description) & words(candidate.title + " " + candidate.description):
+    if item_tokens(report.title + " " + report.description) & item_tokens(candidate.title + " " + candidate.description):
         score += 25
         reasons.append(_("Shared description keywords"))
-    if report.color.strip() and report.color.strip().casefold() == candidate.color.strip().casefold():
+    if color_similarity(report.color, candidate.color) == 1:
         score += 15
         reasons.append(_("Same color"))
-    if report.classroom.strip() and report.classroom.strip().casefold() == candidate.classroom.strip().casefold():
+    if report.classroom.strip() and room_key(report.classroom) == room_key(candidate.classroom):
         score += 20
         reasons.append(_("Same classroom"))
     elif words(report.location) & words(candidate.location):

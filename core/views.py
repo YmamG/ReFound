@@ -63,11 +63,21 @@ def browse(request, archived=False):
             if data.get(field):
                 reports = reports.filter(**{field: data[field]})
         if data.get('q'):
-            reports = reports.filter(Q(title__icontains=data['q']) | Q(description__icontains=data['q']) | Q(color__icontains=data['q']))
+            from .services.item_search import item_tokens, color_tokens, normalize
+            query = item_tokens(data['q']) | color_tokens(data['q'])
+            matching_ids = []
+            for pk, title, description, color in reports.values_list('pk', 'title', 'description', 'color'):
+                text = f'{title} {description} {color}'
+                tokens = item_tokens(text) | color_tokens(text)
+                if normalize(data['q']) in normalize(text) or (query and query <= tokens):
+                    matching_ids.append(pk)
+            reports = reports.filter(pk__in=matching_ids)
         if data.get('location'):
             reports = reports.filter(Q(location__icontains=data['location']) | Q(classroom__icontains=data['location']))
         if data.get('color'):
-            reports = reports.filter(color__iexact=data['color'])
+            from .services.item_search import color_similarity
+            matching_ids = [pk for pk, color in reports.values_list('pk', 'color') if color_similarity(data['color'], color) == 1]
+            reports = reports.filter(pk__in=matching_ids)
         reports = reports.order_by('created_at', 'id') if data.get('sort') == 'oldest' else reports.order_by('-created_at', '-id')
     else:
         reports = reports.none()
