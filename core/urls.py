@@ -4,6 +4,7 @@ from . import views
 app_name = 'core'
 urlpatterns = [
     path('', views.home, name='home'),
+    path('find-match/', views.match_game, name='match_game'),
     path('building/', views.select_building, name='select_building'),
     path('my-reports/', views.my_reports, name='my_reports'),
     path('my-reports/import/', views.import_legacy, name='import_legacy'),

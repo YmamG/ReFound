@@ -25,13 +25,16 @@ msgid "A few shared details"
 msgstr "تفاصيل تقرّبنا"
 
 msgid "A few thoughtful details can help the right person recognize what you’re missing."
-msgstr "تفاصيل بسيطة تساعد الآخرين يتعرّفون على الغرض الذي فقدته."
+msgstr "تفاصيل بسيطة تساعد الآخرين على التعرّف على الغرض الذي فقدته."
 
 msgid "A little breathing room"
 msgstr "لنأخذ استراحة قصيرة"
 
 msgid "A little care"
 msgstr "قليل من الاهتمام"
+
+msgid "A little detail goes a long way"
+msgstr "تفصيل صغير قد يصنع فرقًا"
 
 msgid "A little detail goes a long way."
 msgstr "تفاصيل بسيطة تصنع فرقًا."
@@ -40,7 +43,7 @@ msgid "A little detail."
 msgstr "تفصيل بسيط."
 
 msgid "A little guidance"
-msgstr "نساعدك بالخطوة التالية"
+msgstr "دليلك إلى الخطوة التالية"
 
 msgid "A little lost?"
 msgstr "ضاعت الصفحة؟"
@@ -51,8 +54,11 @@ msgstr "المكان هادئ، حتى الآن."
 msgid "A photo helps"
 msgstr "الصورة تساعد"
 
+msgid "A place, date or classroom can help narrow the search."
+msgstr "قد يساعد المكان أو التاريخ أو رقم القاعة في تضييق نطاق البحث."
+
 msgid "A possible connection?"
-msgstr "يمكن يكون هو؟"
+msgstr "هل هذا هو الغرض الذي تبحث عنه؟"
 
 msgid "A private conversation starts here"
 msgstr "هنا تبدأ رسالة خاصة"
@@ -71,6 +77,9 @@ msgstr "كلية تجمعنا. ومبادرة تقرّبنا."
 
 msgid "A small community board for the things that matter."
 msgstr "مساحة لأهل الكلية، وللأغراض التي تهمهم."
+
+msgid "A student looking for a lost key on campus"
+msgstr "طالبة تبحث عن مفتاح مفقود في الحرم الجامعي"
 
 msgid "A way back."
 msgstr "له رجعة."
@@ -94,7 +103,10 @@ msgid "All statuses"
 msgstr "جميع الحالات"
 
 msgid "Already reported it?"
-msgstr "سبق وأضفت بلاغًا؟"
+msgstr "هل سبق أن أضفت بلاغًا؟"
+
+msgid "Any category"
+msgstr "أي فئة"
 
 msgid "Apply filters"
 msgstr "تطبيق الفلاتر"
@@ -133,10 +145,16 @@ msgid "Bags"
 msgstr "حقائب"
 
 msgid "Be someone’s good news."
-msgstr "كن الخبر الحلو لشخص."
+msgstr "كن سببًا في إسعاد شخص."
+
+msgid "Black"
+msgstr "أسود"
+
+msgid "Blue"
+msgstr "أزرق"
 
 msgid "Both buildings"
-msgstr "المبنيان"
+msgstr "كلا المبنيين"
 
 msgid "Browse all reports"
 msgstr "تصفّح جميع البلاغات"
@@ -160,7 +178,7 @@ msgid "Building"
 msgstr "المبنى"
 
 msgid "Can’t find your key?"
-msgstr "ما لقيت المفتاح القديم؟"
+msgstr "هل فقدت المفتاح القديم؟"
 
 msgid "Category"
 msgstr "فئة الغرض"
@@ -169,7 +187,7 @@ msgid "Category, color, location and date help people recognize an item. A photo
 msgstr "الفئة واللون والمكان والتاريخ تساعد على التعرّف على الغرض. الصورة ورقم القاعة أو المعمل اختياريان. لا تنشر رموز الدخول أو الوثائق الشخصية أو دلائل الملكية المميزة."
 
 msgid "Check distinctive details privately before handing an item over. Meet in a safe public place."
-msgstr "تأكد من التفاصيل المميزة على الخاص قبل تسليم الغرض، وقابل صاحبه في مكان عام وآمن."
+msgstr "تحقّق من التفاصيل المميّزة عبر رسالة خاصة قبل تسليم الغرض، والتقِ بصاحبه في مكان عام وآمن."
 
 msgid "Check the confirmation box before permanently deleting your report."
 msgstr "حدد مربع التأكيد قبل حذف بلاغك نهائيًا."
@@ -214,7 +232,7 @@ msgid "Clearing cookies, switching browsers or using private browsing loses acce
 msgstr "مسح ملفات الارتباط أو تغيير المتصفح أو استخدام التصفح الخاص يفقدك الوصول. عند مشاركة المتصفح مع غيرك يمكنهم إدارة بلاغاته. لا توجد استعادة تلقائية للوصول."
 
 msgid "Close the loop"
-msgstr "كمّل الحكاية"
+msgstr "حدّث حالة البلاغ"
 
 msgid "Clothing"
 msgstr "ملابس"
@@ -238,7 +256,7 @@ msgid "Concern submitted"
 msgstr "تم إرسال الملاحظة"
 
 msgid "Connect privately, confirm the details and arrange a safe handover. Then mark it resolved."
-msgstr "تواصل على الخاص، وتأكد من التفاصيل ورتّب تسليمًا آمنًا، ثم أغلق البلاغ."
+msgstr "تواصل عبر رسالة خاصة، وتحقّق من التفاصيل، ورتّب تسليمًا آمنًا، ثم أغلق البلاغ."
 
 msgid "Contact info"
 msgstr "بيانات التواصل"
@@ -255,6 +273,12 @@ msgstr "نسخ المفتاح القديم"
 msgid "Correct the highlighted fields, or start fresh with all reports."
 msgstr "صحّح الحقول الموضحة أو ابدأ من جديد بعرض جميع البلاغات."
 
+msgid "Could one of these be yours?"
+msgstr "هل تجد غرضك بين هذه النتائج؟"
+
+msgid "Current building"
+msgstr "المبنى المحدّد"
+
 msgid "Date found"
 msgstr "تاريخ العثور"
 
@@ -262,10 +286,13 @@ msgid "Date lost"
 msgstr "تاريخ الفقدان"
 
 msgid "Dates within seven days"
-msgstr "التاريخان خلال سبعة أيام"
+msgstr "الفارق بين التاريخين لا يتجاوز سبعة أيام"
 
 msgid "Delete my report"
 msgstr "حذف بلاغي"
+
+msgid "Describe appearance only. Do not enter contact information or private proof of ownership."
+msgstr "صف مظهر الغرض فقط. لا تُدخل بيانات التواصل أو التفاصيل الخاصة التي تثبت ملكيتك."
 
 msgid "Describe evidence of ownership privately. Do not send passwords or sensitive documents."
 msgstr "اذكر دليل الملكية بشكل خاص. لا ترسل كلمات مرور أو وثائق حساسة."
@@ -300,6 +327,9 @@ msgstr "بريد إلكتروني"
 msgid "English"
 msgstr "English"
 
+msgid "Enter a specific item, such as a bag, keys or headphones."
+msgstr "أدخل اسم غرض محدّد، مثل حقيبة أو مفاتيح أو سماعات."
+
 msgid "Enter a valid phone number."
 msgstr "أدخل رقم هاتف صحيحًا."
 
@@ -308,6 +338,9 @@ msgstr "أدخل رقم بلاغ صحيحًا."
 
 msgid "Enter the management key saved when you submitted this report."
 msgstr "أدخل مفتاح الإدارة المحفوظ عند إضافة هذا البلاغ القديم."
+
+msgid "Enter your clues to reveal real reports, closest first."
+msgstr "أدخل تفاصيل غرضك لتظهر البلاغات الفعلية، بدءًا بالأقرب إلى وصفك."
 
 msgid "Essential cookies only"
 msgstr "ملفات ارتباط ضرورية فقط"
@@ -321,11 +354,26 @@ msgstr "كل غرض صغير."
 msgid "Explore potential matches"
 msgstr "عرض البلاغات المتشابهة"
 
+msgid "Extra appearance details"
+msgstr "تفاصيل إضافية عن المظهر"
+
+msgid "Find a match"
+msgstr "ابحث عن غرضك"
+
+msgid "Find the closest items"
+msgstr "اعرض أقرب النتائج"
+
 msgid "Find this report in My reports. The browser number alone does not grant access. Keep browser cookies to retain access."
 msgstr "تجد هذا البلاغ في «بلاغاتي». رقم المتصفح وحده لا يمنح الوصول. احتفظ بملفات الارتباط لتبقى بلاغاتك متاحة."
 
+msgid "Find your"
+msgstr "لنبحث عن"
+
+msgid "Find your best match — ReFound"
+msgstr "اعثر على أقرب نتيجة — ReFound"
+
 msgid "First, choose your building"
-msgstr "بالبداية، اختر مبناك"
+msgstr "اختر مبناك أولًا"
 
 msgid "Flag inappropriate content from the report page. If you lost browser access, contact the site operator; your displayed number cannot restore it."
 msgstr "أبلغ عن المحتوى المخالف من صفحة البلاغ. إذا فقدت الوصول من المتصفح، تواصل مع مشغّل الموقع؛ الرقم الظاهر لا يستعيده."
@@ -346,7 +394,7 @@ msgid "Found something instead?"
 msgstr "عثرت على شيء بدلًا من ذلك؟"
 
 msgid "Fresh on the board."
-msgstr "توّها على اللوحة."
+msgstr "أحدث البلاغات."
 
 msgid "General area"
 msgstr "المكان"
@@ -361,13 +409,16 @@ msgid "Give the useful details"
 msgstr "اذكر التفاصيل المفيدة"
 
 msgid "Good people."
-msgstr "وناس فيها الخير."
+msgstr "وأشخاص يبادرون بالخير."
 
 msgid "Good things"
 msgstr "الأغراض الغالية"
 
+msgid "Green"
+msgstr "أخضر"
+
 msgid "Have a look around"
-msgstr "خذ نظرة"
+msgstr "تصفّح البلاغات"
 
 msgid "Have a report from the old version? Link it here."
 msgstr "عندك بلاغ من النسخة القديمة؟ اربطه هنا."
@@ -380,6 +431,9 @@ msgstr "المساعدة والتواصل"
 
 msgid "Help it find its owner. Describe the item and where you found it."
 msgstr "ساعد الغرض يرجع لصاحبه. صفه واذكر مكان العثور عليه."
+
+msgid "Help keep ReFound safe"
+msgstr "ساعدنا في الحفاظ على أمان ReFound"
 
 msgid "Help keep this space safe"
 msgstr "ساعدنا نخلي المكان آمنًا"
@@ -445,19 +499,22 @@ msgid "Let the community know where things stand."
 msgstr "خلّ أهل الكلية يعرفون آخر المستجدات."
 
 msgid "Let’s bring it home."
-msgstr "نرجّعه لصاحبه."
+msgstr "لنُعده إلى صاحبه."
 
 msgid "Let’s check those filters"
-msgstr "خلّنا نراجع الفلاتر"
+msgstr "راجع خيارات البحث"
 
 msgid "Let’s find"
-msgstr "نلقى لك"
+msgstr "لنحدّد"
 
 msgid "Let’s find it."
-msgstr "خلّنا نلقاه."
+msgstr "لنبحث عنه."
+
+msgid "Let’s follow the clues."
+msgstr "لنبدأ بالتفاصيل."
 
 msgid "Let’s refresh that page"
-msgstr "خلّنا نحدّث الصفحة"
+msgstr "حدّث الصفحة وحاول مجددًا"
 
 msgid "Link an older report"
 msgstr "ربط بلاغ قديم"
@@ -469,7 +526,7 @@ msgid "Link to this browser"
 msgstr "ربطه بهذا المتصفح"
 
 msgid "Little things. Real connections."
-msgstr "أغراض بسيطة. وروابط تقرّبنا."
+msgstr "أغراض صغيرة، ولفتات تصنع فرقًا."
 
 msgid "Lock this page"
 msgstr "قفل الصفحة القديمة"
@@ -493,7 +550,7 @@ msgid "Lost & found"
 msgstr "المفقودات والمعثورات"
 
 msgid "Lost it?"
-msgstr "ضاع منك شيء؟"
+msgstr "هل فقدت شيئًا؟"
 
 msgid "Lost item"
 msgstr "غرض مفقود"
@@ -514,13 +571,16 @@ msgid "Make it easier to find"
 msgstr "قرّب البحث"
 
 msgid "Make someone’s day"
-msgstr "فرّح شخصًا"
+msgstr "ساهم في إسعاد شخص"
 
 msgid "Manage your report"
 msgstr "إدارة بلاغك"
 
 msgid "Management key"
 msgstr "مفتاح الإدارة القديم"
+
+msgid "Match order"
+msgstr "ترتيب النتيجة"
 
 msgid "Meet safely"
 msgstr "لقاء آمن"
@@ -546,8 +606,11 @@ msgstr "رسائلك، وتحديثاتك، والنهايات الحلوة. ك�
 msgid "Moderators review concerns manually. Submitting this form does not automatically remove a report."
 msgstr "يراجع المشرفون الملاحظات يدويًا. إرسالها لا يحذف البلاغ تلقائيًا."
 
+msgid "More details (optional)"
+msgstr "تفاصيل إضافية (اختياري)"
+
 msgid "More happy returns."
-msgstr "ورجعات تفرّح."
+msgstr "وأغراض تعود إلى أصحابها."
 
 msgid "My reports"
 msgstr "بلاغاتي"
@@ -573,6 +636,9 @@ msgstr "أحدث البلاغات أولًا."
 msgid "Next"
 msgstr "التالي"
 
+msgid "Next closest"
+msgstr "النتيجة التالية"
+
 msgid "No account or management key. Your report belongs to this browser."
 msgstr "بدون حساب أو مفتاح إدارة. بلاغك مرتبط بهذا المتصفح."
 
@@ -585,6 +651,9 @@ msgstr "لا تُرسل إشعارات بريدية تلقائية."
 msgid "No automatic notification is sent."
 msgstr "لا تُرسل إشعارات تلقائية."
 
+msgid "No close reports yet"
+msgstr "لا توجد بلاغات قريبة من وصفك حاليًا"
+
 msgid "No messages yet. Share your public report link to help the right person find it."
 msgstr "لا توجد رسائل حتى الآن. شارك رابط البلاغ العام ليساعد في الوصول لصاحب الغرض."
 
@@ -595,7 +664,7 @@ msgid "No potential matches yet. Check back as new reports arrive, or look throu
 msgstr "لا توجد بلاغات متشابهة حتى الآن. ارجع مع وصول بلاغات جديدة أو تصفّح اللوحة كاملة."
 
 msgid "No recent reports in this space. Your report could be the start of a happy return."
-msgstr "لا توجد بلاغات حديثة هنا. يمكن بلاغك يكون بداية رجعة تفرّح."
+msgstr "لا توجد بلاغات حديثة هنا. قد يساعد بلاغك في إعادة غرض إلى صاحبه."
 
 msgid "No reports in this browser yet."
 msgstr "ما عندك بلاغات في هذا المتصفح حتى الآن."
@@ -609,6 +678,9 @@ msgstr "غير مذكور"
 msgid "Nothing here just yet"
 msgstr "ما لقينا شيئًا، حتى الآن"
 
+msgid "Nothing here yet"
+msgstr "لا توجد نتائج حتى الآن"
+
 msgid "Now, keep the key to your next connection."
 msgstr "احفظ مفتاح البلاغ القديم."
 
@@ -618,8 +690,14 @@ msgstr "البلاغات القديمة"
 msgid "Oldest first"
 msgstr "الأقدم أولًا"
 
+msgid "One clue at a time"
+msgstr "كل تفصيل يقرّبك من غرضك"
+
 msgid "One step closer"
 msgstr "خطوة أقرب"
+
+msgid "Only active, visible reports are shown. Check identifying details privately before arranging a handover."
+msgstr "تظهر البلاغات المتاحة وغير المؤرشفة فقط. تحقّق من التفاصيل المميّزة عبر رسالة خاصة قبل ترتيب التسليم."
 
 msgid "Only for reports created before device-based access. Verify its old key once to move it to this browser. New reports never use keys."
 msgstr "للبلاغات المضافة قبل نظام المتصفح فقط. تحقق بالمفتاح القديم مرة واحدة لنقل البلاغ لهذا المتصفح. البلاغات الجديدة لا تستخدم مفاتيح."
@@ -657,6 +735,12 @@ msgstr "رقم القاعة أو المعمل اختياري، مثل A-204. ل�
 msgid "Optional, but a clear photo can make recognition easier."
 msgstr "اختيارية، لكن الصورة الواضحة تسهّل التعرّف على الغرض."
 
+msgid "Or browse all reports"
+msgstr "أو تصفّح جميع البلاغات"
+
+msgid "Ordered by item details, color and the extra clues you choose."
+msgstr "مرتّبة بحسب تفاصيل الغرض واللون والمعلومات الإضافية التي تختارها."
+
 msgid "Other"
 msgstr "أخرى"
 
@@ -677,6 +761,9 @@ msgstr "هاتف"
 
 msgid "Please check the details below"
 msgstr "راجع التفاصيل التالية"
+
+msgid "Please check the highlighted fields."
+msgstr "يرجى مراجعة الحقول المحدّدة."
 
 msgid "Please confirm deletion"
 msgstr "أكد الحذف"
@@ -733,10 +820,13 @@ msgid "ReFound — A little closer to home"
 msgstr "ReFound — أقرب لصاحبه"
 
 msgid "Ready to help?"
-msgstr "جاهز تساعد؟"
+msgstr "هل أنت مستعد للمساعدة؟"
 
 msgid "Reason"
 msgstr "سبب الإبلاغ"
+
+msgid "Red"
+msgstr "أحمر"
 
 msgid "Remove selected photo"
 msgstr "إزالة الصورة المختارة"
@@ -793,16 +883,16 @@ msgid "Resolved reports are not included in matching suggestions."
 msgstr "البلاغات المغلقة لا تدخل ضمن اقتراحات التشابه."
 
 msgid "Right where you left them."
-msgstr "مكان ما تركتها."
+msgstr "حيث تركتها."
 
 msgid "Same category"
-msgstr "نفس فئة الغرض"
+msgstr "الفئة نفسها"
 
 msgid "Same classroom"
-msgstr "نفس القاعة"
+msgstr "القاعة نفسها"
 
 msgid "Same color"
-msgstr "نفس اللون"
+msgstr "اللون نفسه"
 
 msgid "Search belongings"
 msgstr "ابحث عن غرض"
@@ -812,6 +902,9 @@ msgstr "البحث عن المفقودات"
 
 msgid "Search the board and check the archive. Open a report to send its owner a private message."
 msgstr "ابحث في البلاغات والأرشيف. افتح البلاغ لترسل لصاحبه رسالة خاصة."
+
+msgid "Search within"
+msgstr "البحث ضمن بلاغات"
 
 msgid "See all reports"
 msgstr "كل البلاغات"
@@ -831,8 +924,14 @@ msgstr "إرسال رسالة خاصة"
 msgid "Share a few details"
 msgstr "شارك التفاصيل"
 
+msgid "Shared colors"
+msgstr "ألوان مشتركة"
+
 msgid "Shared description keywords"
 msgstr "كلمات مشتركة في الوصف"
+
+msgid "Shared item details"
+msgstr "تفاصيل مشتركة للغرض"
 
 msgid "Shared privately with the report owner so they can reply."
 msgstr "يُشارك مع صاحب البلاغ بشكل خاص ليتمكن من الرد."
@@ -841,28 +940,34 @@ msgid "Show all reports"
 msgstr "عرض جميع البلاغات"
 
 msgid "Similar general area"
-msgstr "مكان متقارب"
+msgstr "تقارب في المكان"
+
+msgid "Simple matching rules, not AI. Results are suggestions, not proof of ownership."
+msgstr "يعتمد الترتيب على قواعد مقارنة بسيطة، ولا يستخدم الذكاء الاصطناعي. النتائج اقتراحات ولا تثبت الملكية."
 
 msgid "Skip to content"
 msgstr "انتقل للمحتوى"
 
 msgid "Small acts. Happy returns."
-msgstr "مبادرات بسيطة. ورجعات تفرّح."
+msgstr "مبادرات بسيطة تعيد الأغراض إلى أصحابها."
 
 msgid "Small steps. Better days."
-msgstr "خطوات بسيطة. وأيام أحلى."
+msgstr "خطوات بسيطة تصنع فرقًا."
 
 msgid "Something did not look right"
 msgstr "فيه شيء يحتاج مراجعة"
 
 msgid "Something familiar?"
-msgstr "يمكن تلقاه هنا؟"
+msgstr "هل تجد ما تبحث عنه هنا؟"
 
 msgid "Sort by"
 msgstr "الترتيب"
 
 msgid "Start a connection"
 msgstr "ابدأ ببلاغ"
+
+msgid "Start with the item and its color. We will show the closest reports first."
+msgstr "ابدأ باسم الغرض ولونه، وسنعرض لك أقرب البلاغات إلى التفاصيل التي تدخلها."
 
 msgid "Start with your building"
 msgstr "ابدأ بمبناك"
@@ -880,13 +985,16 @@ msgid "Submit concern"
 msgstr "إرسال الملاحظة"
 
 msgid "Talk privately"
-msgstr "تواصل على الخاص"
+msgstr "تواصل عبر رسالة خاصة"
 
 msgid "Tell our moderators about inappropriate content, a misleading report, or a privacy concern. Your concern is not shown publicly."
 msgstr "أخبر المشرفين عن محتوى مخالف أو بلاغ مضلل أو مشكلة خصوصية. لن تظهر ملاحظتك للعامة."
 
 msgid "Tell the campus what you’re looking for. We’ll show reports with shared details."
 msgstr "قل لأهل الكلية ماذا فقدت. بنعرض لك البلاغات التي تشترك مع بلاغك في التفاصيل."
+
+msgid "Tell us the item and its color. Turn over the closest reports, one card at a time. Add a place or classroom when you need a better clue."
+msgstr "أدخل اسم الغرض ولونه، ثم استعرض أقرب البلاغات بطاقةً تلو الأخرى. أضف المكان أو رقم القاعة للحصول على نتائج أدق."
 
 msgid "Thanks for looking out for someone. Share what you found and help make a connection."
 msgstr "شكرًا لاهتمامك. شارك تفاصيل ما وجدت وساعد الغرض يرجع لصاحبه."
@@ -900,11 +1008,14 @@ msgstr "حجم الصورة كبير"
 msgid "That upload is a little too large"
 msgstr "حجم الملف كبير"
 
+msgid "The closest clues"
+msgstr "أقرب البلاغات"
+
 msgid "The community board"
 msgstr "لوحة أهل الكلية"
 
 msgid "The connection is still out there"
-msgstr "يمكن نلقاه قريب"
+msgstr "قد يظهر بلاغ مناسب قريبًا"
 
 msgid "The date cannot be in the future."
 msgstr "لا يمكن اختيار تاريخ في المستقبل."
@@ -920,6 +1031,9 @@ msgstr "ارتبط البلاغ القديم بهذا المتصفح، وأصب�
 
 msgid "The owner must check their management inbox. No automatic email notification is sent. Your reply email is shared privately so they can contact you."
 msgstr "يحتاج صاحب البلاغ لمراجعة صندوقه. لا تصله إشعارات بريدية تلقائية. يُشارك بريدك معه بشكل خاص ليتمكن من الرد."
+
+msgid "The reported color differs from your clue. Check the details carefully."
+msgstr "يختلف اللون المسجّل عن اللون الذي أدخلته. تحقّق من التفاصيل بعناية."
 
 msgid "These details will appear on the public board. Fields marked * are required."
 msgstr "تظهر هذه التفاصيل للعامة. الحقول المعلّمة بنجمة * مطلوبة."
@@ -940,7 +1054,7 @@ msgid "This key is shown once. Save it now: it opens your inbox and lets you res
 msgstr "يظهر المفتاح القديم مرة واحدة، ويفتح رسائل البلاغ القديم وإدارته."
 
 msgid "This might be mine"
-msgstr "يمكن هذا غرضي"
+msgstr "قد يكون هذا غرضي"
 
 msgid "This page needs permission"
 msgstr "هذه الصفحة تحتاج صلاحية"
@@ -973,7 +1087,7 @@ msgid "This report may have been removed, or the link may be incomplete. Let’s
 msgstr "قد يكون البلاغ محذوفًا أو الرابط غير مكتمل. خلّنا نرجعك للبلاغات."
 
 msgid "This story has a happy ending"
-msgstr "هالحكاية انتهت بخير"
+msgstr "أُغلق هذا البلاغ بنجاح"
 
 msgid "Title"
 msgstr "اسم الغرض"
@@ -985,10 +1099,16 @@ msgid "Too many sign-in attempts. Try again in ten minutes."
 msgstr "محاولات دخول كثيرة. حاول بعد عشر دقائق."
 
 msgid "Try a different word or a broader area. New reports may bring your item a little closer."
-msgstr "جرّب كلمة ثانية أو مكانًا أوسع. يمكن بلاغ جديد يقرّب لك غرضك."
+msgstr "جرّب كلمة أخرى أو وسّع نطاق المكان. قد تساعد البلاغات الجديدة في العثور على غرضك."
+
+msgid "Try a simpler item name or fewer extra details. You can also add a lost report and check back later."
+msgstr "جرّب اسمًا أبسط للغرض أو تفاصيل إضافية أقل. يمكنك أيضًا إضافة بلاغ عن غرضك المفقود والعودة لاحقًا."
 
 msgid "Two students helping a backpack find its way back across campus"
 msgstr "طالبان يساعدان حقيبة ترجع لصاحبها في الكلية"
+
+msgid "Two students returning a notebook to its owner"
+msgstr "طالبتان تعيدان دفترًا إلى صاحبته"
 
 msgid "Unable to accept this submission."
 msgstr "تعذر قبول هذا الإرسال."
@@ -1024,13 +1144,16 @@ msgid "Use your management key to access your private report inbox."
 msgstr "استخدم وسيلة الوصول الأصلية لفتح رسائل البلاغ الخاصة."
 
 msgid "Verify distinctive details privately. Meet in a safe public place and never pay to claim an item. Report inappropriate content from the item page; moderators review it manually."
-msgstr "تحقق من التفاصيل المميزة على الخاص، والتقِ في مكان عام وآمن، ولا تدفع مالًا لاستعادة غرض. أبلغ عن المحتوى المخالف من صفحة البلاغ ليراجعه المشرفون."
+msgstr "تحقّق من التفاصيل المميّزة عبر رسالة خاصة، والتقِ في مكان عام وآمن، ولا تدفع مالًا لاستعادة غرضك. أبلغ عن المحتوى المخالف من صفحة البلاغ ليراجعه المشرفون."
 
 msgid "View potential matches"
 msgstr "عرض البلاغات المتشابهة"
 
 msgid "View public report"
 msgstr "عرض البلاغ العام"
+
+msgid "View report"
+msgstr "عرض البلاغ"
 
 msgid "Visit the help page"
 msgstr "زيارة صفحة المساعدة"
@@ -1045,13 +1168,28 @@ msgid "We hit a small detour"
 msgstr "واجهنا مشكلة بسيطة"
 
 msgid "Welcome back."
-msgstr "يا هلا برجعتك."
+msgstr "مرحبًا بعودتك."
+
+msgid "What are we looking for?"
+msgstr "ما الغرض الذي تبحث عنه؟"
 
 msgid "What are you looking for?"
 msgstr "ما الغرض الذي تبحث عنه؟"
 
+msgid "What did you lose?"
+msgstr "ما الذي فقدته؟"
+
+msgid "White"
+msgstr "أبيض"
+
+msgid "Why this report appears"
+msgstr "أسباب ظهور هذا البلاغ"
+
 msgid "Women’s building"
 msgstr "مبنى الطالبات"
+
+msgid "Yellow"
+msgstr "أصفر"
 
 msgid "You are signed into this report for one hour. Bookmark your management page and check back for private messages."
 msgstr "الوصول للبلاغ القديم متاح لمدة ساعة. احتفظ برابطه وتابع رسائله الخاصة."
@@ -1059,8 +1197,11 @@ msgstr "الوصول للبلاغ القديم متاح لمدة ساعة. اح�
 msgid "Your browser, your reports"
 msgstr "متصفحك وبلاغاتك"
 
+msgid "Your clues"
+msgstr "تفاصيل غرضك"
+
 msgid "Your college’s lost and found, all in one place. Find your belongings or help something find its owner."
-msgstr "مفقودات كلية الحاسب، في مكان واحد. ابحث عن غرضك، أو ساعد غرضًا يرجع لصاحبه."
+msgstr "مفقودات كلية الحاسب في مكان واحد. ابحث عن غرضك، أو ساعد في إعادة غرض إلى صاحبه."
 
 msgid "Your concern has been saved for moderator review. Thank you for helping keep ReFound safe."
 msgstr "حُفظت ملاحظتك ليراجعها المشرفون. شكرًا لمساعدتك في إبقاء ReFound آمنًا."
@@ -1076,6 +1217,9 @@ msgstr "افتح بلاغك القديم."
 
 msgid "Your message goes to the owner’s private inbox."
 msgstr "تصل رسالتك لصندوق صاحب البلاغ الخاص."
+
+msgid "Your next clue starts here."
+msgstr "قد تكون أقرب إلى غرضك مما تتوقّع."
 
 msgid "Your next connection starts here."
 msgstr "بلاغك الجاي يبدأ هنا."
@@ -1102,7 +1246,7 @@ msgid "Your report and private messages have been deleted."
 msgstr "حُذف بلاغك ورسائله الخاصة."
 
 msgid "Your report is on the board."
-msgstr "بلاغك صار على اللوحة."
+msgstr "نُشر بلاغك على اللوحة."
 
 msgid "Your report is published and saved in this browser’s My reports."
 msgstr "نُشر بلاغك وحُفظ في «بلاغاتي» بهذا المتصفح."
@@ -1125,6 +1269,9 @@ msgstr "بلاغاتك."
 msgid "Your secure form session could not be verified. Reload the form and try again. Nothing was submitted."
 msgstr "تعذر التحقق من أمان النموذج. حدّث الصفحة وحاول مرة أخرى. لم تُحفظ أي بيانات."
 
+msgid "best match."
+msgstr "غرضك معًا."
+
 msgid "days and is carried out by the site’s scheduled cleanup. Owners can delete earlier."
 msgstr "يومًا، ويجري عبر التنظيف المجدول للموقع. ويمكن لصاحب البلاغ حذفه قبل ذلك."
 
@@ -1143,8 +1290,14 @@ msgstr "يومًا. وتصبح قابلة للحذف النهائي بعد"
 msgid "e.g. Campus library"
 msgstr "مثلًا: مكتبة الكلية"
 
+msgid "e.g. a laptop bag"
+msgstr "مثلًا: حقيبة حاسوب محمول"
+
+msgid "e.g. blue or black"
+msgstr "مثلًا: أزرق أو أسود"
+
 msgid "find their way back."
-msgstr "ترجع لأصحابها."
+msgstr "تعود إلى أصحابها."
 
 msgid "for"
 msgstr "عن"
@@ -1161,5 +1314,8 @@ msgstr "من"
 msgid "reports"
 msgstr "بلاغات"
 
+msgid "rule points"
+msgstr "نقطة مقارنة"
+
 msgid "your next step."
-msgstr "خطوتك الجاية."
+msgstr "خطوتك التالية."

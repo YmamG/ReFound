@@ -313,3 +313,23 @@ def import_legacy(request):
 @require_safe
 def add_report(request):
     return render(request, 'core/add_report.html')
+
+
+@require_safe
+def match_game(request):
+    from .forms import MatchGameForm
+    from .services.item_search import rank_items
+    submitted = 'item' in request.GET or 'color' in request.GET
+    initial_building = request.session.get('building', '')
+    form = MatchGameForm(request.GET if submitted else None,
+        initial={'building': initial_building, 'search_kind': 'found'})
+    results = rank_items(form.cleaned_data) if submitted and form.is_valid() else []
+    fields = ('category', 'location', 'classroom', 'event_date', 'description')
+    advanced_open = request.GET.get('options_open') == '1' or any(request.GET.get(field) for field in fields)
+    advanced_open = advanced_open or (submitted and bool(form.errors) and any(field in form.errors for field in (*fields, 'building', 'search_kind')))
+    advanced_open = advanced_open or request.GET.get('search_kind', 'found') == 'lost'
+    scope = request.GET.get('building', initial_building)
+    return render(request, 'core/match_game.html', {
+        'form': form, 'submitted': submitted, 'results': results,
+        'advanced_open': advanced_open, 'scope_label': dict(Report.Building.choices).get(scope, ''),
+    })

@@ -7,8 +7,9 @@
 <link rel="icon" href="{% static 'images/favicon.svg' %}" type="image/svg+xml">
 <link rel="stylesheet" href="{% static 'css/tokens.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}"><script src="{% static 'js/main.js' %}" defer></script>
+{% block extra_head %}{% endblock %}
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
 <a class="skip-link" href="#main">{% translate 'Skip to content' %}</a>
 <header class="site-header"><div class="nav-shell">
 <a class="brand" href="{% url 'core:home' %}" aria-label="{% translate 'ReFound home' %}"><span class="brand-mark">{% include 'core/includes/icon.html' with name='reconnect' %}</span><span dir="ltr">ReFound<span class="brand-dot">.</span></span></a>
@@ -17,6 +18,7 @@
 <a class="button button-small header-cta" href="{% url 'core:add_report' %}">{% translate 'Add a report' %} <span class="button-dot">{% include 'core/includes/icon.html' with name='plus' %}</span></a>
 <button class="menu-toggle icon-button" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="{% translate 'Open navigation' %}" hidden>{% include 'core/includes/icon.html' with name='menu' %}</button></div>
 <nav id="main-nav" class="site-nav" aria-label="{% translate 'Main navigation' %}"><div class="nav-links">
+<a {% if request.resolver_match.url_name == 'match_game' %}aria-current="page"{% endif %} href="{% url 'core:match_game' %}">{% translate 'Find a match' %}</a>
 <a {% if request.resolver_match.url_name == 'browse' %}aria-current="page"{% endif %} href="{% url 'core:browse' %}">{% translate 'Browse reports' %}</a>
 <a {% if request.resolver_match.url_name == 'archive' %}aria-current="page"{% endif %} href="{% url 'core:archive' %}">{% translate 'Archive' %}</a>
 <a {% if request.resolver_match.url_name == 'my_reports' %}aria-current="page"{% endif %} href="{% url 'core:my_reports' %}">{% translate 'My reports' %}</a>

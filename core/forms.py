@@ -12,7 +12,7 @@ import uuid
 from django.core.files.base import ContentFile
 from django.core.validators import validate_email, RegexValidator
 
-from .models import Report, Claim, AbuseReport
+from .models import Report, Claim, AbuseReport, not_future
 
 
 class SpamProtectedForm(forms.Form):
@@ -153,3 +153,29 @@ class OwnerLookupForm(ManagementForm):
                 return uuid.UUID(match.group(1))
             except ValueError:
                 raise forms.ValidationError(_('Enter a valid report ID.'))
+
+
+class MatchGameForm(forms.Form):
+    item = forms.CharField(max_length=120, min_length=2, label=_('What did you lose?'),
+        widget=forms.TextInput(attrs={'placeholder': _('e.g. a laptop bag'), 'autocomplete': 'off'}))
+    color = forms.CharField(max_length=50, label=_('Color'),
+        widget=forms.TextInput(attrs={'placeholder': _('e.g. blue or black'), 'list': 'match-colors', 'autocomplete': 'off'}))
+    category = forms.ChoiceField(required=False, label=_('Category'), choices=[('', _('Any category')), *Report.Category.choices])
+    building = forms.ChoiceField(required=False, label=_('Building'), choices=[('', _('Both buildings')), *Report.Building.choices])
+    location = forms.CharField(required=False, max_length=120, label=_('General area'))
+    classroom = forms.CharField(required=False, max_length=30, label=_('Classroom / lab number'))
+    event_date = forms.DateField(required=False, label=_('Event date'), validators=[not_future], widget=forms.DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'))
+    description = forms.CharField(required=False, max_length=160, label=_('Extra appearance details'),
+        widget=forms.Textarea(attrs={'rows': 3}), help_text=_('Describe appearance only. Do not enter contact information or private proof of ownership.'))
+    search_kind = forms.ChoiceField(required=False, initial='found', label=_('Search within'), choices=Report.Kind.choices)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['event_date'].widget.attrs['max'] = timezone.localdate().isoformat()
+
+    def clean_item(self):
+        from .services.item_search import item_tokens
+        value = self.cleaned_data['item']
+        if not item_tokens(value):
+            raise forms.ValidationError(_('Enter a specific item, such as a bag, keys or headphones.'))
+        return value

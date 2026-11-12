@@ -1,0 +1,46 @@
+/* Homepage only: storybook composition from the supplied MindMarket recording. */
+.home-reference .site-header{background:var(--paper);border:0;padding-top:24px}
+.home-reference .nav-shell{background:var(--white);border-radius:50px;padding:12px 24px;box-shadow:none}
+.home-reference .hero{background:var(--paper);padding:55px 0 0;border-radius:0;overflow:visible}
+.home-reference .hero-grid{display:flex;flex-direction:column;gap:0;text-align:center}
+.home-reference .hero-copy{max-width:980px;margin:auto;position:relative;z-index:1}
+.home-reference .hero h1{font-size:clamp(62px,10vw,140px);line-height:1;letter-spacing:-.065em;margin:24px 0}
+.home-reference .headline-mark{background:none;padding:0}
+.home-reference .headline-mark:after{display:none}
+.home-reference .hero-description{max-width:570px;margin:0 auto 24px;font-size:18px}
+.home-reference .hero-actions,.home-reference .building-picker form{justify-content:center}
+.home-reference .building-picker{margin:20px auto}
+.home-reference .building-picker p{margin-bottom:8px}
+.home-reference .building-option{background:transparent;border-color:#2c2e2a55}
+.home-reference .building-option.is-selected{background:var(--white);border-color:var(--ink)}
+.home-reference .button-outline{background:transparent;border:1px solid var(--ink)}
+.home-reference .button-outline:hover{background:var(--white)}
+.home-reference .hero-art{width:min(850px,95%);height:420px;margin:15px auto 0;transform:none;position:relative}
+.home-reference .hero-art:before,.home-reference .hero-art:after{display:none}
+.home-reference .hero-art img{width:100%;height:100%;object-fit:contain;object-position:center;transform:none;filter:none}
+.home-reference .micro-copy{margin-top:18px;color:var(--ink)}
+.story-section{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:7%;padding-top:110px;padding-bottom:80px;position:relative;isolation:isolate}
+.story-section:before{content:"";position:absolute;z-index:-1;inset:8% 7% 0 20%;border:50px solid var(--green);border-inline-start:0;border-block-end:0;border-radius:48% 50% 0 0;transform:rotate(-16deg);opacity:.55;pointer-events:none}
+.story-illustration img{display:block;width:100%;height:auto;max-height:560px;object-fit:contain}
+.story-copy{background:var(--white);border-radius:50px;padding:44px;box-shadow:none}
+.story-copy h2{font-size:clamp(32px,3.8vw,52px);line-height:1.12;letter-spacing:-.045em;margin:16px 0 24px}
+.story-copy p{font-size:18px;margin-bottom:28px}
+.story-browse{display:table;margin-top:22px}
+.home-reference .how-section{padding-top:55px}
+.home-reference .step-card{border-radius:40px;background:var(--white);border:none;padding:30px}
+.home-reference .site-footer{background:var(--yellow)}
+html[dir=rtl] .home-reference .hero h1{letter-spacing:0;line-height:1.4;font-size:clamp(50px,7vw,100px)}
+html[dir=rtl] .story-copy h2{letter-spacing:0;line-height:1.5}
+@media(max-width:1000px){.home-reference .nav-shell{padding:12px 16px}.home-reference .hero-art{height:290px}.story-copy{padding:30px}.story-section{gap:30px}}
+@media(max-width:800px){.home-reference .site-header{padding-top:12px}.home-reference .nav-shell{margin-inline:16px;width:auto}.home-reference .site-nav{background:var(--white);border-radius:24px}.home-reference .hero{padding-top:40px;border-radius:0 0 32px 32px}.home-reference .hero h1{font-size:clamp(56px,12vw,85px)}.home-reference .hero-art{height:260px;width:100%;margin-top:24px}.story-section{grid-template-columns:1fr;padding-top:60px;padding-bottom:35px;gap:20px}.story-illustration{max-width:400px;margin:auto}.story-section:before{border-width:30px}.story-copy{padding:28px}.home-reference .hero-description{font-size:16px}.home-reference .hero-actions{flex-wrap:wrap}.home-reference .building-picker{max-width:100%}}
+@media(prefers-reduced-motion:no-preference){.story-illustration img{transition:transform .5s ease}.story-illustration:hover img{transform:translateY(-6px)}}
+
+.home-reference .hero-button{background:var(--white);color:var(--ink);border:1px solid transparent}.home-reference .hero-button:hover{border-color:var(--ink);background:var(--white)}.home-reference h1,.home-reference h2{text-wrap:balance}.home-reference .hero-art{max-width:850px}.home-reference .hero-art img{object-fit:contain}.home-reference .hero-grid{overflow:visible}.home-reference .hero-art{overflow:visible}
+/* Contain decorative paths; keep artwork and interactive content unclipped. */
+.story-section:before{display:none}
+.story-section{background:none}
+@media(min-width:801px){.story-illustration{position:relative}.story-illustration:after{content:"";position:absolute;z-index:-1;width:70%;height:75%;inset:10% 10%;border:22px solid var(--green);border-radius:48% 52% 40% 60%;transform:rotate(-12deg)}}
+.home-reference .site-header{padding-inline:20px}
+@media(max-width:800px){.home-reference .site-header{padding-inline:0}.home-reference .nav-shell{margin-inline:16px}.home-reference .hero-art{height:280px}.story-copy h2{font-size:32px}.story-copy p{font-size:16px}.home-reference .section-heading{align-items:start;gap:20px}.home-reference .section-heading h2{font-size:32px}}
+.home-reference .hero-copy{width:100%}
+@media(max-width:600px){.home-reference .building-picker form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.home-reference .building-option{padding-inline:7px;gap:5px;font-size:12px;min-width:0;white-space:normal}.home-reference .building-option>.icon{flex-shrink:0}.home-reference .hero-actions{min-width:0}}

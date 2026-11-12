@@ -123,6 +123,7 @@ For optional Playwright/Chromium checks, start the **disposable fixture**, then 
 ```bash
 python scripts/browser_fixture.py
 node scripts/check_browser.cjs
+node scripts/check_match_game.cjs
 ```
 
 Stop any ordinary local server first. The fixture serves only loopback port 8000, uses temporary SQLite/media, original synthetic test illustrations and testing-only HTTP cookie settings; never deploy it. Playwright/Chromium are development tools, not application requirements. `CHROMIUM_EXECUTABLE` can select the binary. `REFOUND_BROWSER_ARTIFACTS` selects the screenshot directory (default: system temporary directory / `refound-browser-artifacts`). Restart the fixture before each full test run. Real reports are never automatically seeded.
@@ -151,3 +152,11 @@ Use one Linux Django service, a persistent filesystem for SQLite and media, and 
 No GitHub upload or deployment is performed by these setup/test commands. Existing research weights, datasets, virtual environments, secrets and local user data must stay out of the production build.
 
 Known limits: no automatic notifications, two-way in-app replies, ownership verification, public text editing or browser-access recovery; rule matching can miss paraphrases/Arabic-English equivalents and scans eligible candidates; ordinary submission replay guards do not guarantee deduplication of simultaneous independent POSTs. This is suitable for supervised user testing after the operator completes hosting/privacy responsibilities.
+
+## Storybook design and guided item search
+
+The homepage follows the supplied MindMarket reference: cream paper, oversized centered typography, floating white navigation, original illustrated characters and a yellow footer. Arabic copy and mobile spacing have been refined; local fonts work without a font CDN. See [design decisions](docs/DESIGN_DECISIONS.md).
+
+**Search lost items** opens `/find-match/`: enter item + color, optionally open extra details, then review actual reports in ranked cards. Previous/next and keyboard controls enhance an ordered list that also works without JavaScript. **Browse reports** retains the existing page and filters. See [search rules, limitations and assets](docs/MATCH_SEARCH.md).
+
+Matching remains rule-based. AI research is frozen and experimental AI is not active in public workflows. These changes need no migrations or new application packages. Nothing in this update deploys or pushes the project.
